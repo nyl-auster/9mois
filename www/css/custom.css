@@ -1,0 +1,59 @@
+/* Empty. Add your own CSS if you like */
+
+/* for INVAlID form fields */
+.ng-invalid.ng-dirty{
+    /*background:#FA787E;*/
+}
+
+/* for  VALID form fields */
+.ng-valid.ng-dirty{
+    /*background:#FAFA89;*/
+}
+
+
+.onboard ion-content{
+    background-color: #333 !important;
+}
+
+.onboard ion-content h1,
+.onboard ion-content h2,
+.onboard ion-content h3,
+.onboard ion-content h4,
+.onboard ion-content p,
+.onboard ion-content div
+{
+
+}
+
+.onboard-home {
+    background : url('../img/band.jpg') no-repeat center;
+}
+
+#onboard-presentation{
+    padding:2em;
+
+   text-align: center;
+}
+
+.bar-header {
+
+
+}
+
+.bar-header .title {
+
+    font-weight: bold;
+}
+
+/*
+
+form {
+      transition:0.5s linear all;
+      background: white;
+  }
+form .ng-invalid {
+    background: red;
+    color:white;
+}
+*/
+

@@ -1,0 +1,23 @@
+<!--
+Display a list of all users
+-->
+
+
+<ion-view view-title="{{'USER_VIEW_USERS_LIST_TITLE' | translate}}" ng-controller="usersListCtrl">
+  <ion-content>
+      <!--<pre>
+      {{ users | json }}
+      </pre>
+      -->
+      <!-- Refresh list when dragging down screen  -->
+      <ion-refresher
+              pulling-text="Pull to refresh..."
+              on-refresh="doRefresh()">
+      </ion-refresher>
+    <ion-list>
+      <ion-item class="item-avatar" ng-repeat="user in users" type="item-text-wrap" ui-sref="app.main.userDetail({userId: user.id})">
+        <h2>{{user.name}}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

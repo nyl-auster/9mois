@@ -1,0 +1,24 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+    <!-- Persons Tab -->
+    <ion-tab title="{{'APP_TAB_USERS_TITLE' | translate}}" icon-off="ion-ios7-heart-outline" icon-on="ion-ios7-heart" ui-sref="app.main.users">
+        <ion-nav-view name="usersList"></ion-nav-view>
+    </ion-tab>
+
+
+    <!-- Account Tab -->
+    <ion-tab title="{{'APP_TAB_ME_TITLE' | translate}}" icon-off="ion-ios7-gear-outline" icon-on="ion-ios7-gear" ui-sref="app.main.me">
+        <ion-nav-view name="me"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>

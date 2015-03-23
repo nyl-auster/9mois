@@ -1,0 +1,68 @@
+<!--
+Form to create a new user on Drunken Panda the server.
+-->
+
+<ion-view view-title="Create an account" ng-controller="signUpCtrl">
+    <ion-content>
+
+        <!-- ng-submit : submit only of the form is valid -->
+        <form name="signUpForm" novalidate ng-submit="signUpForm.$valid && createUser(user)">
+
+            <div class="list">
+
+                <label
+                        class="item item-input"
+                        ng-class="{ 'has-error' : signUpForm.email.$invalid && !signUpForm.email.$pristine }"
+                        >
+                    <span class="input-label">{{'USER_SIGNUP_FORM_EMAIL_LABEL' | translate}}</span>
+                    <input
+                            type="email"
+                            ng-model="user.email"
+                            name="email"
+                            required>
+                </label>
+
+                <p ng-show="signUpForm.email.$invalid && !signUpForm.email.$pristine" class="help-block">You email is invalid.</p>
+
+                <label class="item item-input">
+                    <span class="input-label">{{'USER_SIGNUP_FORM_NAME_LABEL' | translate}}</span>
+                    <input
+                            type="text"
+                            ng-model="user.name"
+                            name="name"
+                            required>
+                </label>
+
+                <div ng-show="signUpForm.$submitted || signUpForm.name.$touched">
+                    <div ng-show="signUpForm.name.$error.required">{{'USER_SIGNUP_FORM_NAME_ERROR_REQUIRED' | translate}}</div>
+                </div>
+
+
+                <label class="item item-input">
+                    <span class="input-label">{{'USER_SIGNUP_FORM_PASSWORD_LABEL' | translate}}</span>
+                    <input
+                            type="password"
+                            name="password"
+                            required
+                            ng-model="user.password">
+                </label>
+
+                <div ng-show="signUpForm.$submitted || signUpForm.password.$touched">
+                    <div ng-show="signUpForm.password.$error.required">{{'USER_SIGNUP_FORM_PASSWORD_ERROR_REQUIRED' | translate}}</div>
+                </div>
+
+            </div>
+
+            <div class="padding">
+                <input
+                        class="button button-block button-positive"
+                        type="submit"
+                        ng-disabled="signUpForm.$invalid"
+                        value="{{'USER_SIGNUP_BUTTON' | translate}}">
+
+            </div>
+
+        </form>
+
+    </ion-content>
+</ion-view>

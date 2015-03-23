@@ -1,0 +1,65 @@
+
+<ion-view view-title="Sign in" ng-controller="signInCtrl">
+
+    <ion-content>
+
+        <!--
+        $valid allow us to check if form is valid, and call signIn function
+        only if form is valid
+        novalidate disabled html5 validation
+        -->
+        <form id="signInForm" name="signInForm"
+              ng-submit="signInForm.$valid && signIn(user)"
+              novalidate>
+
+            <div class="list">
+
+                <label
+                        class="item item-input"
+                        ng-class="{ 'has-error' : signInForm.email.$invalid && !signInForm.email.$pristine }"
+                        >
+                    <span class="input-label">
+                        {{'AUTHENTICATION_SIGNIN_FORM_EMAIL_LABEL' | translate}}
+                    </span>
+                    <input
+                            type="email"
+                            ng-model="user.email"
+                            name="email"
+                            required>
+                </label>
+
+                <p ng-show="signInForm.email.$invalid && !signInForm.email.$pristine" class="help-block">You email is invalid.</p>
+
+                <label
+                        class="item item-input"
+                        ng-class="{ 'has-error' : signInForm.passwors.$invalid && !signInForm.password.$pristine }"
+                        >
+                    <span class="input-label">
+                        {{'AUTHENTICATION_SIGNIN_FORM_PASSWORD_LABEL' | translate}}
+                    </span>
+                    <input
+                            type="password"
+                            name="password"
+                            required
+                            ng-model="user.password">
+                </label>
+
+                <p ng-show="signInForm.password.$invalid && !signInForm.password.$pristine" class="help-block">
+                    {{'AUTHENTICATION_SIGNIN_FORM_PASSWORD_ERROR_REQUIRED' | translate}}
+                </p>
+
+
+            </div>
+            <div class="padding">
+                <input
+                        class="button button-block button-positive"
+                        type="submit"
+                        ng-disabled="signInForm.$invalid"
+                        value="{{'AUTHENTICATION_SIGNIN_BUTTON' | translate}}">
+
+            </div>
+
+        </form>
+
+    </ion-content>
+</ion-view>
