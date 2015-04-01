@@ -14,9 +14,9 @@
           templateUrl:'modules/onboard/templates/onboard.html'
         })
 
-        // update onboard.html, inserting onboard.home.html template when
+        // update onboard.html, inserting onboard.app-main-home.html template when
         // onboard/home is the url.
-        // views is an object because when need to inform router UI of which views
+        // templates is an object because when need to inform router UI of which templates
         // we want to update in onboard.html
         .state('app.onboard.home', {
           url : "/home",

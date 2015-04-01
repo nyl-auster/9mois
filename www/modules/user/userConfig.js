@@ -21,7 +21,7 @@
 
           .state('app.main.meForm', {
             url: '/me/edit',
-            // replace me informations view content with meform.html content in main.html
+            // replace me informations view content with meform.html content in app-main.html
             views: {
               'me': {
                 templateUrl: 'modules/user/templates/meForm.html'
@@ -41,7 +41,7 @@
 
           .state('app.main.userDetail', {
             url: '/users/:userId',
-            // replace usersList view content with userDetail.html content in main.html
+            // replace usersList view content with userDetail.html content in app-main.html
             views: {
               'usersList': {
                 templateUrl: 'modules/user/templates/userDetail.html'
