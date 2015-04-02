@@ -14,8 +14,8 @@ angular.module('app')
     $translateProvider.preferredLanguage('fr');
 
     // try cache of ionic
-    // $ionicConfigProvider.views.forwardCache(true);
-    $ionicConfigProvider.views.maxCache(30);
+    $ionicConfigProvider.views.forwardCache(true);
+    $ionicConfigProvider.views.maxCache(10);
 
     $sceDelegateProvider.resourceUrlWhitelist([
       // Allow same origin resource loads.

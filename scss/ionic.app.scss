@@ -15,6 +15,28 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$stable:                          #8E9EA7 !default;
+$base-background-color:           #DAE8F0 !default;
+
+  // Tabs
+// -------------------------------
+
+.tab-item .icon {
+  color: white;
+}
+
+.tab-item .tab-title {
+  color: white;
+}
+
+ion-header-bar .title {
+  color:white !important;
+}
+
+ion-header-bar .button {
+  color:white !important;
+}
+
 
 
 
@@ -23,3 +45,5 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+
