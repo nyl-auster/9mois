@@ -13,10 +13,8 @@ angular.module('app.page')
     };
 
     $scope.deleteList = function(listId) {
-      console.log(listId);
       todoFactory.deleteList(listId);
       $scope.lists = todoFactory.getAllLists();
-      console.log($scope.lists);
     };
 
     $scope.add = function() {

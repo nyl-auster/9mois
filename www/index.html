@@ -210,7 +210,7 @@ navigation history that also transitions its templates in and out.
 
         <ion-content>
             <ion-list show-delete="showDelete">
-                <ion-item ng-repeat="list in lists track by $index">
+                <ion-item ng-repeat="list in lists track by $index" ui-sref="app.main.tasks({listId: $index})">
                     <ion-delete-button class="ion-minus-circled" ng-click="deleteList({{$index}})"></ion-delete-button>
                     {{list.name }}
                 </ion-item>
@@ -226,12 +226,12 @@ navigation history that also transitions its templates in and out.
  -------------------------->
 
 <script id="app-main-tasks.html" type="text/ng-template">
-    <ion-view view-title="Todo Listes" ng-controller="todoTaskListController">
+    <ion-view view-title="Tâches" ng-controller="todoTaskListController">
 
         <ion-content>
             <ion-list>
-                <ion-item ng-repeat="list in lists" ui-sref="app.main.tasks">
-                    {{::list.name }}
+                <ion-item ng-repeat="task in tasks">
+                    {{task.name }}
                 </ion-item>
             </ion-list>
 

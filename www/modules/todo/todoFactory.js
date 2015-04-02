@@ -17,6 +17,10 @@ angular.module('app.page').factory('listFactory', function() {
           {
             name: "example task",
             status: "todo"
+          },
+          {
+            name: "eaxmple tasks 2",
+            status: "todo"
           }
         ]
       },
@@ -33,6 +37,10 @@ angular.module('app.page').factory('listFactory', function() {
         tasks: [
           {
             name: "example task liste 2",
+            status: "todo"
+          },
+          {
+            name: "second example task liste 2",
             status: "todo"
           }
         ]
@@ -56,12 +64,7 @@ angular.module('app.page').factory('listFactory', function() {
     },
 
     getListById: function(listId) {
-      for (var i = 0; i < listDatas.lists.length; i++) {
-        if (listId == listDatas[i]['id']) {
-          return listDatas[i];
-        }
-      }
-      return null;
+      return listDatas.lists[listId];
     }
 
   }
