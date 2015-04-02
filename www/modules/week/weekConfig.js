@@ -7,7 +7,7 @@ angular.module('app.week').config(['$stateProvider', function($stateProvider) {
       url: '/app/main/week',
       views: {
         'app-main-week': {
-          templateUrl: 'modules/week/templates/app-main-week.html'
+          templateUrl: 'app-main-week.html'
         }
       }
     });

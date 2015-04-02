@@ -14,17 +14,16 @@
 angular.module('app', [
     // 'app.routerUiDebug', // display ui-router events
     // 'app.authentication',
-    'app.user',
-    'app.onboard',
-    'app.theme',
+    // 'app.user',
+    // 'app.onboard',
     'app.page',
     'app.todo',
     'app.week'
   ])
 
   .run([
-    '$ionicPlatform', '$rootScope', 'authentication', '$location',
-    function($ionicPlatform, $rootScope, authentication, $location) {
+    '$ionicPlatform', '$rootScope', '$location',
+    function($ionicPlatform, $rootScope, $location) {
 
       $ionicPlatform.ready(function() {
 

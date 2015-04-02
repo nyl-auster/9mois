@@ -1,5 +1,5 @@
 
-angular.module('app.page')
+angular.module('app.todo')
 
   // create our states; this is some kind of advanced router for our app.
   // states machines allow ionic module to build automatically a "back" button
@@ -15,9 +15,18 @@ angular.module('app.page')
           url: '/app/main/todo',
           views: {
             'app-main-todo': {
-              templateUrl: 'modules/todo/templates/app-main-todo.html'
+              templateUrl: 'app-main-todo.html'
             }
           }
-        });
+        })
+
+      .state('app.main.tasks', {
+        url: '/app/main/tasks/:listId',
+        views: {
+          'app-main-todo': {
+            templateUrl: 'app-main-tasks.html'
+          }
+        }
+      });
 
     }]);

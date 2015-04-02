@@ -34,7 +34,7 @@ angular.module('app.base')
         .state('app.main', {
           abstract: true,
           // children states templates will be inserted here
-          templateUrl:'modules/base/templates/app-main.html'
+          templateUrl:'app-main.html'
         });
 
     }]);

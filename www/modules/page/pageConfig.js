@@ -11,11 +11,20 @@ angular.module('app.page')
 
       $stateProvider
 
-        .state('app.main.page', {
+        .state('app.main.theme', {
+          url: '/app/main/theme',
+          views: {
+            'app-main-theme': {
+              templateUrl: 'app-main-theme.html'
+            }
+          }
+        })
+
+        .state('app.main.themePage', {
           url: '/app/main/page',
           views: {
-            'app-main-page': {
-              templateUrl: 'modules/theme/templates/app-main-page.html'
+            'app-main-theme': {
+              templateUrl: 'app-main-theme-page.html'
             }
           }
         });
