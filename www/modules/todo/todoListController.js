@@ -1,8 +1,9 @@
 angular.module('app.page')
 
-  .controller('todoListController', ['$scope', 'todoFactory', '$ionicPopup', function($scope, todoFactory, $ionicPopup) {
+  .controller('todoListController', ['$scope', 'listFactory', '$ionicPopup', function($scope, todoFactory, $ionicPopup) {
 
     $scope.lists = todoFactory.getAllLists();
+
 
     $scope.showDelete = false;
 
@@ -12,8 +13,10 @@ angular.module('app.page')
     };
 
     $scope.deleteList = function(listId) {
+      console.log(listId);
       todoFactory.deleteList(listId);
       $scope.lists = todoFactory.getAllLists();
+      console.log($scope.lists);
     };
 
     $scope.add = function() {
