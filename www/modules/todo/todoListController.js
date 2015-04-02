@@ -4,11 +4,26 @@ angular.module('app.page')
 
     $scope.lists = todoFactory.getAllLists();
 
+    $scope.showDelete = false;
+
+    $scope.toggleDelete = function() {
+      $scope.showDelete = !$scope.showDelete;
+      return $scope.showDelete;
+    };
+
+    $scope.deleteList = function(listId) {
+      todoFactory.deleteList(listId);
+      $scope.lists = todoFactory.getAllLists();
+    };
+
     $scope.add = function() {
       $ionicPopup.prompt({
-        title: 'Enter a new list',
+        title: 'Entrez un nom pour cette nouvelle liste',
         inputType: 'text'
       }).then(function(data) {
+        if (!data) {
+          return;
+        }
         var list = {
           name: data
         };

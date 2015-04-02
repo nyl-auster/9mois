@@ -1,6 +1,7 @@
 angular.module('app.page').factory('todoFactory', function() {
 
   var listDatas = {
+
     lists: [
       {
         id: 1,
@@ -19,6 +20,7 @@ angular.module('app.page').factory('todoFactory', function() {
           }
         ]
       },
+
       {
         id: 2,
         name: "Ma deuxieme liste",
@@ -37,6 +39,7 @@ angular.module('app.page').factory('todoFactory', function() {
         ]
       }
     ]
+
   };
 
   return {
@@ -45,12 +48,25 @@ angular.module('app.page').factory('todoFactory', function() {
       listDatas.lists.push(list);
     },
 
+    deleteList: function(listId) {
+      for (var i = 0; i < listDatas.lists.length; i++) {
+        if (listId == listDatas.lists[i]['id']) {
+          listDatas.lists.splice(i, 1);
+        }
+      }
+    },
+
     getAllLists: function() {
       return listDatas.lists;
     },
 
     getListById: function(listId) {
-      console.log(listDatas.lists);
+      for (var i = 0; i < listDatas.lists.length; i++) {
+        if (listId == listDatas[i]['id']) {
+          return listDatas[i]['id'];
+        }
+      }
+      return null;
     }
 
   }

@@ -45,6 +45,8 @@
 
     <script src="modules/week/week.js"></script>
     <script src="modules/week/weekConfig.js"></script>
+    <script src="modules/week/weekService.js"></script>
+    <script src="modules/week/weekController.js"></script>
 
     <script src="modules/page/page.js"></script>
     <script src="modules/page/pageConfig.js"></script>
@@ -85,18 +87,24 @@ navigation history that also transitions its templates in and out.
     </ion-nav-back-button>
 </ion-nav-bar>
 
+<!-------------------------
+ app-main-week.html
+ -------------------------->
+
 <script id="app-main-week.html" type="text/ng-template">
-<ion-view view-title="Week">
+<ion-view view-title="Week" ng-controller="weekController">
 
     <ion-content>
 
-        Week view
+        {{::textOfTheWeek}}
 
     </ion-content>
 </ion-view>
 </script>
 
-
+<!-------------------------
+ app-main.html
+ -------------------------->
 
 <script id="app-main.html" type="text/ng-template">
 
@@ -132,6 +140,9 @@ navigation history that also transitions its templates in and out.
 
 </script>
 
+<!-------------------------
+ app-main-theme.html
+ -------------------------->
 
 <script id="app-main-theme.html" type="text/ng-template">
     <ion-view view-title="Themes">
@@ -157,6 +168,9 @@ navigation history that also transitions its templates in and out.
     </ion-view>
 </script>
 
+<!-------------------------
+ app-main-theme-page.html
+ -------------------------->
 
 <script id="app-main-theme-page.html" type="text/ng-template">
     <ion-view view-title="Page du theme">
@@ -168,19 +182,26 @@ navigation history that also transitions its templates in and out.
     </ion-view>
 </script>
 
+<!-------------------------
+ app-main-todo.html
+ -------------------------->
 
 <script id="app-main-todo.html" type="text/ng-template">
 <ion-view view-title="Todo Listes" ng-controller="todoListController">
 
     <ion-nav-buttons side="right">
-        <button class="button" ng-click="add()">
-            Add
+        <button class="button button-icon ion-ios7-plus" ng-click="add()">
         </button>
     </ion-nav-buttons>
 
+    <ion-nav-buttons side="left">
+       <button class="button button-icon ion-ios7-minus" ng-click="toggleDelete()"></button>
+    </ion-nav-buttons>
+
     <ion-content>
-        <ion-list>
+        <ion-list show-delete="showDelete">
             <ion-item ng-repeat="list in lists">
+                <ion-delete-button class="ion-minus-circled" ng-click="deleteList({{::list.id}})"></ion-delete-button>
                {{::list.name }}
             </ion-item>
         </ion-list>
@@ -189,6 +210,10 @@ navigation history that also transitions its templates in and out.
 
 </ion-view>
 </script>
+
+<!-------------------------
+ app-main-tasks.html
+ -------------------------->
 
 <script id="app-main-tasks.html" type="text/ng-template">
     <ion-view view-title="Todo Listes" ng-controller="todoTaskListController">

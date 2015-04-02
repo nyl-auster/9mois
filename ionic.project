@@ -1,4 +1,11 @@
 {
   "name": "9mois",
-  "app_id": "09c83cb1"
+  "app_id": "09c83cb1",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.4"
+    }
+  ]
 }

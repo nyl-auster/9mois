@@ -1,11 +1,3 @@
-/**
- * This is the master module of the application, instancied in
- * index.html with <body ng-app="app">
- *
- * It includes our modules, allowing us to enable / disable modules easily.
- *
- * @see www/index.html
- */
 
 /**
  * Master module, calling all other modules.
