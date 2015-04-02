@@ -1,12 +1,4 @@
 {
-  "name": "wearemusicians",
-  "app_id": "917f0fc5",
-  "gulpStartupTasks": [
-    "sass",
-    "watch"
-  ],
-  "watchPatterns": [
-    "www/**/*",
-    "!www/lib/**/*"
-  ]
+  "name": "9mois",
+  "app_id": "09c83cb1"
 }

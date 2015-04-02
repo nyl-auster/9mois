@@ -35,16 +35,6 @@ angular.module('app.base')
           abstract: true,
           // children states templates will be inserted here
           templateUrl:'modules/base/templates/app-main.html'
-        })
-
-        .state('app.main.home', {
-          url: '/app/main/home',
-          views: {
-            'app-main-home': {
-              templateUrl: 'modules/base/templates/app-main-home.html'
-            }
-          }
         });
-
 
     }]);

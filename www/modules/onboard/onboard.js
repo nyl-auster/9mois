@@ -7,7 +7,7 @@
 (function(){
 
   angular.module('app.onboard', [
-      'pascalprecht.translate',
+      'app.base',
       'app.authentication',
       'app.user'
     ])

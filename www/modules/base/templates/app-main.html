@@ -11,14 +11,18 @@ navigation history that also transitions its templates in and out.
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
     <!-- Persons Tab -->
-    <ion-tab title="Accueil" icon-off="ion-ios7-home-outline" icon-on="ion-ios7-home" ui-sref="app.main.home">
-        <ion-nav-view name="app-main-home"></ion-nav-view>
+    <ion-tab title="Accueil" icon-off="ion-ios7-home-outline" icon-on="ion-ios7-home" ui-sref="app.main.week">
+        <ion-nav-view name="app-main-week"></ion-nav-view>
     </ion-tab>
-
 
     <!-- Account Tab -->
     <ion-tab title="journal" icon-off="ion-ios7-bookmarks-outline" icon-on="ion-ios7-bookmarks" ui-sref="app.main.theme">
         <ion-nav-view name="app-main-theme"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Account Tab -->
+    <ion-tab title="Listes" icon-off="ion-ios7-gear-outline" icon-on="ion-ios7-gear" ui-sref="app.main.todo">
+        <ion-nav-view name="app-main-todo"></ion-nav-view>
     </ion-tab>
 
 </ion-tabs>

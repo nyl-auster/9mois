@@ -25,6 +25,24 @@
 
 }
 
+ion-content {
+    /*background-color : rgb(216, 200, 145);*/
+}
+
+ion-header-bar {
+    background-color : rgb(226, 210, 155) !important;
+}
+
+.tab-nav{
+    background-color : rgb(216, 200, 145) !important;
+}
+
+.app-main-home-content {
+    background-image : url('../img/splash.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .onboard-home {
     background : url('../img/splash.png') no-repeat center;
 }
@@ -32,7 +50,7 @@
 #onboard-presentation{
     padding:2em;
 
-   text-align: center;
+    text-align: center;
 }
 
 .bar-header {

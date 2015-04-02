@@ -1,16 +1,20 @@
-(function(){
+/**
+ * This module hold app configuration for now.
+ * Inject "config" in controllers / services etc ... to use.
+ */
+angular.module('app.config', [])
 
-  /**
-   * This module hold app configuration for now.
-   * Inject "config" in controllers / services etc ... to use.
-   */
-  angular.module('app.config', [])
+  .constant('config', {
 
-    .constant('config', {
+    // base url for webservices, point to nodejs server
+    serverUrl: 'http://91.121.166.167:3333',
+    themes: [
+      'Les questions de la semaine',
+      'Le bébé',
+      "L'arbre généalogique",
+      "Votre moitié et vous",
+    ]
 
-      // base url for webservices, point to nodejs server
-      serverUrl: 'http://91.121.166.167:3333'
+  });
 
-    });
 
-})();
