@@ -1,8 +1,5 @@
 angular.module('app.page').factory('listFactory', function() {
 
-  var store = null;
-  storeSave(list, null, tasks, null);
-
   var listDatas = {
 
     staging: {
@@ -69,8 +66,21 @@ angular.module('app.page').factory('listFactory', function() {
 
   return {
 
-    save: function(list, listId, task, taskId) {
-      
+    writeList: function(list, listId) {
+
+      // update
+      if (list && listId) {
+        listDatas.lists[listId] = list;
+      }
+      // create
+      else if (list && !listId) {
+        listDatas.lists.push(list);
+      }
+      else {
+        return false;
+      }
+
+      return listDatas.lists;
     },
 
     createList: function(list) {
