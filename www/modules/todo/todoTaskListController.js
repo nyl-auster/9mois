@@ -7,6 +7,7 @@ angular.module('app.page')
     var tasks = list.tasks;
 
     $scope.tasksSuggested = list.tasks_suggested;
+    console.log(list.tasks_suggested);
 
     $scope.listName = list.name;
     $scope.tasks = tasks;
