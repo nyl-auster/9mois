@@ -54,11 +54,13 @@ angular.module('app.page').factory('todoListFactory', ['jsonStoreFactory', funct
   return {
 
     getAllLists: function() {
+      // return default todos list if no todos list have been defined,
+      // else return stored todos lists.
       var datas = jsonStoreFactory.read(jsonStoreKey);
       if (datas) {
         todoLists = datas;
       }
-      return datas;
+      return todoLists;
     },
 
     getListById: function(listId) {

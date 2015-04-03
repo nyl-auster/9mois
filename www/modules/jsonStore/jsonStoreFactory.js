@@ -54,8 +54,13 @@ angular.module('app.jsonStore').factory('jsonStoreFactory', ['localStorageFactor
     read: function(key) {
 
       var storedJson = localStorageFactory.getObject('appJsonStore');
+      if (Object.getOwnPropertyNames(storedJson).length === 0) {
+        return false;
+      }
+
       var datas = storedJson.staging.local.datas[key].datas;
       return datas;
+
 
       // if http promise is resolved, update staging informations
       // store['staging']['remote_pulled'][key]['datas'] = datas;
