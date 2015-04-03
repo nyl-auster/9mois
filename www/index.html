@@ -214,15 +214,15 @@ navigation history that also transitions its templates in and out.
 
         <ion-content>
             <ion-list show-delete="showDelete">
-                <ion-item class="item-text-wrap" ng-repeat="list in lists track by $index">
+                <ion-item ui-sref="app.main.todoDetail({listId: $index})" class="item-text-wrap" ng-repeat="list in lists track by $index">
 
                     <ion-delete-button
                             class="ion-minus-circled"
                             ng-click="deleteList({{$index}})">
                     </ion-delete-button>
-                    <div class="item-button-right" ui-sref="app.main.todoDetail({listId: $index})">
+
                     {{list.name }}
-                     </div>
+
                     <div class="item-button-right"">
 
                         <a ng-click="updateList({{$index}})" class="button button-clear">

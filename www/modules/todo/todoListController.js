@@ -11,6 +11,8 @@ angular.module('app.page')
     };
 
     $scope.updateList = function(listId) {
+      event.stopPropagation();
+      event.preventDefault();
       var list = todoListFactory.getList(listId);
       $ionicPopup.prompt({
         title: 'Renommer la liste : " ' + list.name + '" ',
@@ -21,6 +23,9 @@ angular.module('app.page')
         list.name = data;
         todoListFactory.updateList(listId, list);
         $scope.lists = todoListFactory.getTodoLists();
+      })
+      .finally(function(){
+
       });
 
     };
