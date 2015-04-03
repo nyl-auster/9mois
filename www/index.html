@@ -108,17 +108,17 @@ navigation history that also transitions its templates in and out.
     <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
         <!-- Persons Tab -->
-        <ion-tab title="Accueil" icon-off="ion-ios7-home-outline" icon-on="ion-ios7-home" ui-sref="app.main.week">
+        <ion-tab title="Accueil" icon-off="ion-home" icon-on="ion-home" ui-sref="app.main.week">
             <ion-nav-view name="app-main-week"></ion-nav-view>
         </ion-tab>
 
         <!-- Account Tab -->
-        <ion-tab title="journal" icon-off="ion-ios7-bookmarks-outline" icon-on="ion-ios7-bookmarks" ui-sref="app.main.theme">
+        <ion-tab title="journal" icon-on="ion-compose" icon-off="ion-compose"  ui-sref="app.main.theme">
             <ion-nav-view name="app-main-theme"></ion-nav-view>
         </ion-tab>
 
         <!-- Account Tab -->
-        <ion-tab title="Listes" icon-off="ion-ios7-gear-outline" icon-on="ion-ios7-gear" ui-sref="app.main.todo">
+        <ion-tab title="Listes" icon-off="ion-drag" icon-on="ion-drag" ui-sref="app.main.todo">
             <ion-nav-view name="app-main-todo"></ion-nav-view>
         </ion-tab>
 
@@ -200,22 +200,27 @@ navigation history that also transitions its templates in and out.
     <ion-view view-title="Listes" ng-controller="todoListController">
 
         <ion-nav-buttons side="right">
-            <button class="button button-icon ion-ios7-plus" ng-click="add()">
+            <button class="button button-icon ion-plus" ng-click="add()">
             </button>
         </ion-nav-buttons>
 
         <ion-nav-buttons side="left">
-            <button class="button button-icon ion-ios7-minus" ng-click="toggleDelete()"></button>
+            <button class="button button-icon ion-minus" ng-click="toggleDelete()"></button>
         </ion-nav-buttons>
 
         <ion-content>
             <ion-list show-delete="showDelete">
-                <ion-item ng-repeat="list in lists track by $index" ui-sref="app.main.tasks({listId: $index})">
-                    <ion-delete-button class="ion-minus-circled" ng-click="deleteList({{$index}})"></ion-delete-button>
-                    {{list.name }}
+                <ion-item class="item-button-right" ng-repeat="list in lists track by $index">
+                    <ion-delete-button
+                            class="ion-minus-circled"
+                            ng-click="deleteList({{$index}})">
+                    </ion-delete-button>
+                    <div ui-sref="app.main.tasks({listId: $index})">{{list.name }}</div>
+                    <button ng-click="updateList({{$index}})" class="button button-positive ">
+                        <i  class="icon ion-compose"></i>
+                    </button>
                 </ion-item>
             </ion-list>
-
         </ion-content>
 
     </ion-view>
@@ -226,14 +231,42 @@ navigation history that also transitions its templates in and out.
  -------------------------->
 
 <script id="app-main-tasks.html" type="text/ng-template">
-    <ion-view view-title="Tâches" ng-controller="todoTaskListController">
+    <ion-view view-title="{{listName}}" ng-controller="todoTaskListController">
+
+        <ion-nav-buttons side="right">
+            <button class="button button-icon ion-plus" ng-click="add()">
+            </button>
+        </ion-nav-buttons>
+
+        <ion-nav-buttons side="left">
+            <button class="button button-icon ion-minus" ng-click="toggleDelete()"></button>
+        </ion-nav-buttons>
 
         <ion-content>
-            <ion-list>
-                <ion-item ng-repeat="task in tasks">
-                    {{task.name }}
+            <ion-list show-delete="showDelete">
+                <ion-item class="item-button-right" ng-repeat="task in tasks track by $index">
+                    <ion-delete-button
+                            class="ion-minus-circled"
+                            ng-click="deleteTask({{$index}})">
+                    </ion-delete-button>
+                    {{task.name}}
+                    <button class="button button-positive" ng-click="updateTask({{$index}})">
+                        <i  class="icon ion-compose"></i>
+                    </button>
                 </ion-item>
             </ion-list>
+
+            <div class="card">
+                <div class="item item-divider">
+                    Suggestions de taches
+                </div>
+                <ion-list">
+                <ion-item class="item-button-right" ng-repeat="taskSuggested in tasksSuggested track by $index">
+                    {{taskSuggested.name}}
+                </ion-item>
+                </ion-list>
+            </div>
+
 
         </ion-content>
 

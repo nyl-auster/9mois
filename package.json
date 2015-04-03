@@ -1,7 +1,7 @@
 {
   "name": "9mois",
   "version": "1.0.0",
-  "description": "wearemusicians: An Ionic project",
+  "description": "9 mois",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
