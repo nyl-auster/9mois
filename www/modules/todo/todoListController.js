@@ -1,18 +1,17 @@
 angular.module('app.page')
 
-  .controller('todoListController', ['$scope', 'listFactory', '$ionicPopup', function($scope, todoFactory, $ionicPopup) {
+  .controller('todoListController', ['$scope', 'todoListFactory', '$ionicPopup', function($scope, todoListFactory, $ionicPopup) {
 
-    $scope.lists = todoFactory.getAllLists();
+    $scope.lists = todoListFactory.getAllLists();
 
     $scope.showDelete = false;
 
     $scope.toggleDelete = function() {
-      $scope.showDelete = !$scope.showDelete;
-      return $scope.showDelete;
+      return $scope.showDelete = !$scope.showDelete;
     };
 
     $scope.updateList = function(listId) {
-      var list = todoFactory.getListById(listId);
+      var list = todoListFactory.getListById(listId);
       $ionicPopup.prompt({
         title: 'Renommer la liste : " ' + list.name + '" ',
         inputType: 'text',
@@ -22,14 +21,14 @@ angular.module('app.page')
           return;
         }
         list.name = data;
-        todoFactory.updateList(listId, list);
+        todoListFactory.updateList(listId, list);
       });
-      $scope.lists = todoFactory.getAllLists();
+      $scope.lists = todoListFactory.getAllLists();
     };
 
     $scope.deleteList = function(listId) {
-      todoFactory.deleteList(listId);
-      $scope.lists = todoFactory.getAllLists();
+      todoListFactory.deleteList(listId);
+      $scope.lists = todoListFactory.getAllLists();
     };
 
     $scope.add = function() {
@@ -43,7 +42,8 @@ angular.module('app.page')
         var list = {
           name: data
         };
-        todoFactory.createList(list);
+        todoListFactory.addTodoList(list);
+        $scope.lists = todoListFactory.getAllLists();
       })
     }
 

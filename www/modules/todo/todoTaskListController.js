@@ -1,12 +1,11 @@
 angular.module('app.page')
 
-  .controller('todoTaskListController', ['$scope', '$ionicPopup', 'listFactory', '$stateParams', function($scope, $ionicPopup, listFactory, $stateParams) {
+  .controller('todoTaskListController', ['$scope', '$ionicPopup', 'todoListFactory', '$stateParams', function($scope, $ionicPopup, todoListFactory, $stateParams) {
 
     var listId = $stateParams.listId;
-    var list = listFactory.getListById(listId);
-    var tasks = listFactory.getAllTasksByListId(listId);
+    var list = todoListFactory.getListById(listId);
+    var tasks = todoListFactory.getAllTasksFromList(listId);
     $scope.tasksSuggested = list.tasks_suggested;
-    console.log(tasks);
 
     $scope.listName = list.name;
 
@@ -15,30 +14,26 @@ angular.module('app.page')
     $scope.showDelete = false;
 
     $scope.toggleDelete = function() {
-      $scope.showDelete = !$scope.showDelete;
-      return $scope.showDelete;
+      return $scope.showDelete = !$scope.showDelete;
     };
 
     $scope.updateTask = function(taskId) {
-      console.log(taskId);
-      var task = listFactory.getTaskByIdInList(listId, taskId);
+      var task = todoListFactory.getTaskByIdInList(listId, taskId);
       $ionicPopup.prompt({
         title: 'Renommer la tache : " ' + task.name + '" ',
         inputType: 'text',
         inputPlaceholder: task.name
       }).then(function(data) {
-        if (!data) {
-          return;
-        }
+        if (!data) return;
         task.name = data;
-        listFactory.updateTaskInList(listId, taskId, task);
+        todoListFactory.updateTaskInList(listId, taskId, task);
       });
-      $scope.tasks = listFactory.getAllTasksByListId(listId);
+      $scope.tasks = todoListFactory.getAllTasksFromList(listId);
     };
 
     $scope.deleteTask = function(taskId) {
-      listFactory.deleteTaskInList(listId, taskId);
-      $scope.tasks = listFactory.getAllTasksByListId(listId);
+      todoListFactory.deleteTaskInList(listId, taskId);
+      $scope.tasks = todoListFactory.getAllTasksFromList(listId);
     };
 
     $scope.add = function() {
@@ -46,14 +41,12 @@ angular.module('app.page')
         title: 'Décrivez cette nouvelle tache',
         inputType: 'text'
       }).then(function(data) {
-        if (!data) {
-          return;
-        }
+        if (!data) return;
         var task = {
           name: data
         };
-        listFactory.createTaskInList(listId, task);
-        $scope.tasks = listFactory.getAllTasksByListId(listId);
+        todoListFactory.addTaskInList(listId, task);
+        $scope.tasks = todoListFactory.getAllTasksFromList(listId);
       })
     }
 

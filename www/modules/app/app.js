@@ -10,7 +10,8 @@ angular.module('app', [
     // 'app.onboard',
     'app.page',
     'app.todo',
-    'app.week'
+    'app.week',
+    'app.jsonStore'
   ])
 
   .run([
