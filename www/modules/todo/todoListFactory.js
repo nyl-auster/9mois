@@ -75,6 +75,7 @@ angular.module('app.page').factory('todoListFactory', ['jsonStoreFactory', funct
     updateList: function(listId, list) {
       todoLists = this.getAllLists();
       todoLists[listId] = list;
+      jsonStoreFactory.write(jsonStoreKey, todoLists);
     },
 
     deleteList: function(listId) {

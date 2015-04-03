@@ -17,13 +17,12 @@ angular.module('app.page')
         inputType: 'text',
         inputPlaceholder: list.name
       }).then(function(data) {
-        if (!data) {
-          return;
-        }
+        if (!data) return;
         list.name = data;
         todoListFactory.updateList(listId, list);
+        $scope.lists = todoListFactory.getAllLists();
       });
-      $scope.lists = todoListFactory.getAllLists();
+
     };
 
     $scope.deleteList = function(listId) {

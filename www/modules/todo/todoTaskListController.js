@@ -27,8 +27,9 @@ angular.module('app.page')
         if (!data) return;
         task.name = data;
         todoListFactory.updateTaskInList(listId, taskId, task);
+        $scope.tasks = todoListFactory.getAllTasksFromList(listId);
       });
-      $scope.tasks = todoListFactory.getAllTasksFromList(listId);
+
     };
 
     $scope.deleteTask = function(taskId) {
