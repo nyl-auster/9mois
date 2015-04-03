@@ -39,7 +39,7 @@ angular.module('app.jsonStore').factory('jsonStoreFactory', ['localStorageFactor
       // save in local storage
       localStorageFactory.setObject('appJsonStore', jsonStore);
 
-      return datas;
+      return jsonStore.staging.local.datas[key];
 
       // write in local storage for local persistence
 

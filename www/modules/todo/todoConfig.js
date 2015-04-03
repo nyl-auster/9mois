@@ -20,8 +20,8 @@ angular.module('app.todo')
           }
         })
 
-      .state('app.main.tasks', {
-        url: '/app/main/tasks/:listId',
+      .state('app.main.todoDetail', {
+        url: '/app/main/todo/:listId',
         views: {
           'app-main-todo': {
             templateUrl: 'app-main-tasks.html'

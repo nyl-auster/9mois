@@ -53,51 +53,47 @@ angular.module('app.page').factory('todoListFactory', ['jsonStoreFactory', funct
 
   return {
 
-    getAllLists: function() {
-      // return default todos list if no todos list have been defined,
-      // else return stored todos lists.
+    // return default todos list if no todos list have been defined,
+    // else return stored todos lists.
+    getTodoLists: function() {
       var datas = jsonStoreFactory.read(jsonStoreKey);
-      if (datas) {
-        todoLists = datas;
-      }
+      if (datas) todoLists = datas;
       return todoLists;
     },
 
-    getListById: function(listId) {
-      todoLists = this.getAllLists();
-      return todoLists[listId];
+    getList: function(listId) {
+      return this.getTodoLists()[listId];
     },
 
     addTodoList: function(list) {
-      todoLists = this.getAllLists();
+      todoLists = this.getTodoLists();
       todoLists.push(list);
       jsonStoreFactory.write(jsonStoreKey, todoLists);
     },
 
     updateList: function(listId, list) {
-      todoLists = this.getAllLists();
+      todoLists = this.getTodoLists();
       todoLists[listId] = list;
       jsonStoreFactory.write(jsonStoreKey, todoLists);
     },
 
     deleteList: function(listId) {
-      todoLists = this.getAllLists();
+      todoLists = this.getTodoLists();
       todoLists.splice(listId, 1);
       jsonStoreFactory.write(jsonStoreKey, todoLists);
     },
 
     getAllTasksFromList: function(listId) {
-      var list = this.getListById(listId);
-      return list.tasks;
+      return this.getList(listId).tasks;
     },
 
-    getTaskByIdInList: function(listId, taskId) {
-      todoLists = this.getAllLists();
-      return todoLists[listId].tasks[taskId];
+    getTaskFromList: function(listId, taskId) {
+      return this.getList(listId).tasks[taskId];
     },
 
-    addTaskInList: function(listId, task) {
-      todoLists = this.getAllLists();
+    addTaskToList: function(listId, task) {
+      todoLists = this.getTodoLists();
+      // make sur task property is defined
       if (typeof todoLists[listId].tasks === 'undefined') {
         todoLists[listId].tasks = [];
       }
@@ -105,14 +101,14 @@ angular.module('app.page').factory('todoListFactory', ['jsonStoreFactory', funct
       jsonStoreFactory.write(jsonStoreKey, todoLists);
     },
 
-    updateTaskInList: function(listId, taskId, task) {
-      todoLists = this.getAllLists();
+    updateTaskFromList: function(listId, taskId, task) {
+      todoLists = this.getTodoLists();
       todoLists[listId].tasks[taskId] = task;
       jsonStoreFactory.write(jsonStoreKey, todoLists);
     },
 
-    deleteTaskInList: function(listId, taskId) {
-      todoLists = this.getAllLists();
+    deleteTaskFromList: function(listId, taskId) {
+      todoLists = this.getTodoLists();
       todoLists[listId].tasks.splice(taskId, 1);
       jsonStoreFactory.write(jsonStoreKey, todoLists);
     }
