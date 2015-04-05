@@ -10,3 +10,19 @@ angular.module('app.base', [
   'pascalprecht.translate',
   'ngCordova'
 ]);
+
+angular.module('app.base').directive('autoGrow', function() {
+  return function(scope, element, attr){
+
+    element.css('resize', 'none');
+    element.css('overflow', 'hidden');
+
+    var update = function(event) {
+      element.css('height', element[0].scrollHeight + 'px');
+    }
+
+    element.bind('keydown change blur focus', update);
+
+    update();
+  }
+});

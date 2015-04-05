@@ -28,10 +28,10 @@
                     Il n'y a aucune tâche enregistrée pour le moment.
                 </div>
 
-                <ion-item ng-show="!tasksListIsEmpty()" class="item item-input-inset" ng-repeat="task in tasks track by $index">
+                <ion-item ng-show="!tasksListIsEmpty()" class="item item-input-inset item-text-wrap" ng-repeat="task in tasks track by $index">
 
-                    <label class="item item-input-wrapper">
-                        <input ng-blur="updateTasks(tasks)" ng-model="tasks[$index].name" value="{{tasks[$index].name}}" type="text"/>
+                    <label class="item item-input item-input-wrapper">
+                        <textarea auto-grow ng-blur="updateTasks(tasks)" ng-model="tasks[$index].name">{{tasks[$index].name}}</textarea>
                     </label>
                     <button ng-click="deleteTask($index)" class="ion-minus-circled button icon assertive button-icon"></button>
 
@@ -40,7 +40,7 @@
 
             </ion-list>
 
-            <button ng-click="addTasks(task)" class="button button-positive"> Ajouter une tache </button>
+            <button ng-click="addTasks(task)" class="ion-plus-circled button icon balanced button-icon"> </button>
 
         </div>
 
