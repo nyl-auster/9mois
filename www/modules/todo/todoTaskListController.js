@@ -10,6 +10,11 @@ angular.module('app.page')
     $scope.listId = listId;
     $scope.list =  list;
 
+    $scope.test = function() {
+      alert('ok');
+    };
+
+
     // create an empty tasks array if nos tasks are found
     if (typeof tasks === 'undefined') {
       tasks = [{name: ''}];

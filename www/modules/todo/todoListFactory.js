@@ -10,21 +10,21 @@ angular.module('app.page').factory('todoListFactory', ['jsonStoreFactory', funct
       tasks_suggested: [
         {
           name: "suggestion de tache pour ma premiere valise",
-          status: "todo"
+          done: false
         },
         {
           name: "suggestion de tache 2 pour ma premiere valise",
-          status: "todo"
+          done: false
         },
       ],
       tasks: [
         {
           name: "tache de test 1",
-          status: "todo"
+          done: false
         },
         {
           name: "tache de test 2",
-          status: "todo"
+          done: false
         }
       ]
     },
