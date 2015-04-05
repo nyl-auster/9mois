@@ -29,7 +29,9 @@
                 </div>
 
                 <ion-item ng-show="!tasksListIsEmpty()" class="item item-input-inset item-text-wrap" ng-repeat="task in tasks track by $index">
-
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
                     <label class="item item-input item-input-wrapper">
                         <textarea auto-grow ng-blur="updateTasks(tasks)" ng-model="tasks[$index].name">{{tasks[$index].name}}</textarea>
                     </label>
@@ -38,9 +40,11 @@
 
                 </ion-item>
 
+
+                 <button ng-click="addTasks(task)" style="padding: 17px 10px 10px 17px" class="ion-plus-circled button icon balanced button-icon"> Ajouter une tâche </button>
+
             </ion-list>
 
-            <button ng-click="addTasks(task)" class="ion-plus-circled button icon balanced button-icon"> </button>
 
         </div>
 
