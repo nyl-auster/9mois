@@ -1,0 +1,61 @@
+<ion-view view-title="{{list.name}}" ng-controller="todoTaskListController">
+
+    <ion-content>
+        <!--
+        <ion-list show-delete="showDelete">
+            <ion-item class="item-text-wrap" ng-repeat="task in tasks track by $index">
+                <ion-delete-button
+                        class="ion-minus-circled"
+                        ng-click="deleteTask({{$index}})">
+                </ion-delete-button>
+                {{task.name}}
+                <div class="item-button-right">
+                    <a class="button button-clear" ng-click="updateTask({{$index}})">
+                        <i class="icon ion-compose"></i>
+                    </a>
+                </div>
+
+
+            </ion-item>
+        </ion-list>
+        -->
+
+        <div class="card">
+
+            <ion-list class="todo-tasks-list">
+
+                <div ng-show="tasksListIsEmpty()">
+                    Il n'y a aucune tâche enregistrée pour le moment.
+                </div>
+
+                <ion-item ng-show="!tasksListIsEmpty()" class="item item-input-inset" ng-repeat="task in tasks track by $index">
+
+                    <label class="item item-input-wrapper">
+                        <input ng-blur="updateTasks(tasks)" ng-model="tasks[$index].name" value="{{tasks[$index].name}}" type="text"/>
+                    </label>
+                    <button ng-click="deleteTask($index)" class="ion-minus-circled button icon assertive button-icon"></button>
+
+
+                </ion-item>
+
+            </ion-list>
+
+            <button ng-click="addTasks(task)" class="button button-positive"> Ajouter une tache </button>
+
+        </div>
+
+        <div class="card" ng-if="tasksSuggested">
+            <div class="item item-divider">
+                Suggestions de taches
+            </div>
+            <ion-list>
+                <ion-item class="item-button-right" ng-repeat="taskSuggested in tasksSuggested track by $index">
+                    {{taskSuggested.name}}
+                </ion-item>
+            </ion-list>
+        </div>
+
+
+    </ion-content>
+
+</ion-view>

@@ -24,7 +24,7 @@ angular.module('app.todo')
         url: '/app/main/todo/:listId',
         views: {
           'app-main-todo': {
-            templateUrl: 'app-main-tasks.html'
+            templateUrl: 'modules/todo/templates/app-main-tasks.html'
           }
         }
       });

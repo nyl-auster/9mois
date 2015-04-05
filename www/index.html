@@ -65,6 +65,8 @@
     <script src="modules/app/app.js"></script>
     <script src="modules/app/appConfig.js"></script>
 
+
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- must be the last script : cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -145,6 +147,7 @@ navigation history that also transitions its templates in and out.
                         {{::textOfTheWeek}}
                     </p>
                 </div>
+                <a class="button button-balanced" ng-click="vibrer()"> Vibrer </a>
             </div>
         </ion-content>
     </ion-view>

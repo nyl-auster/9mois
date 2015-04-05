@@ -109,7 +109,9 @@ angular.module('app.page').factory('todoListFactory', ['jsonStoreFactory', funct
 
     deleteTaskFromList: function(listId, taskId) {
       todoLists = this.getTodoLists();
+      console.log(todoLists[listId]);
       todoLists[listId].tasks.splice(taskId, 1);
+      console.log(todoLists[listId]);
       jsonStoreFactory.write(jsonStoreKey, todoLists);
     }
 

@@ -7,50 +7,49 @@ angular.module('app.page')
     var tasks = list.tasks;
 
     $scope.tasksSuggested = list.tasks_suggested;
-    console.log(list.tasks_suggested);
+    $scope.listId = listId;
+    $scope.list =  list;
 
-    $scope.listName = list.name;
+    // create an empty tasks array if nos tasks are found
+    if (typeof tasks === 'undefined') {
+      tasks = [{name: ''}];
+    }
+    // always add an empty task at the end of an existing lists of tasks
+    else {
+      tasks.push({name: ''});
+    }
     $scope.tasks = tasks;
-    $scope.showDelete = false;
 
-    $scope.toggleDelete = function() {
-      return $scope.showDelete = !$scope.showDelete;
+    $scope.taskListIsEmpty = function() {
+      if (typeof $scope.tasks === 'undefined') {
+        return true;
+      }
+      if ($scope.tasks.lenght == 0) {
+        return true;
+      }
+      if ($scope.tasks.length == 1) {
+        if ($scope.tasks[0].name == '') {
+          return true;
+        }
+      }
+      return false;
     };
 
-    $scope.updateTask = function(taskId) {
-      var task = todoListFactory.getTaskFromList(listId, taskId);
-      $ionicPopup.prompt({
-        title: 'Renommer la tache : " ' + task.name + '" ',
-        inputType: 'text',
-        inputPlaceholder: task.name
-      }).then(function(data) {
-        if (!data) return;
-        task.name = data;
-        todoListFactory.updateTaskFromList(listId, taskId, task);
-        $scope.tasks = todoListFactory.getAllTasksFromList(listId);
-      });
-
+    $scope.updateTasks = function(tasks) {
+      list.tasks = tasks;
+      todoListFactory.updateList(listId, list);
     };
 
     $scope.deleteTask = function(taskId) {
-      todoListFactory.deleteTaskFromList(listId, taskId);
-      $scope.tasks = todoListFactory.getAllTasksFromList(listId);
+      $scope.tasks.splice(taskId, 1);
+      list.tasks = $scope.tasks;
+      todoListFactory.updateList(listId, list);
     };
 
-    $scope.add = function() {
-      $ionicPopup.prompt({
-
-        title: 'Décrivez cette nouvelle tache',
-        inputType: 'text'
-      }).then(function(data) {
-        if (!data) return;
-        var task = {
-          name: data
-        };
-        todoListFactory.addTaskToList(listId, task);
-        $scope.tasks = todoListFactory.getAllTasksFromList(listId);
-
-      })
+    $scope.addTasks = function(task) {
+      $scope.tasks.push({name:''});
+      list.tasks = $scope.tasks;
+      todoListFactory.updateList(listId, list);
     }
 
   }]);
