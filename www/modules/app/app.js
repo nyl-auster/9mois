@@ -11,7 +11,7 @@ angular.module('app', [
     'app.page',
     'app.todo',
     'app.week',
-    'app.jsonStore'
+    'app.jsonStore',
   ])
 
   .run([
@@ -20,10 +20,13 @@ angular.module('app', [
 
       $ionicPlatform.ready(function() {
 
+
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if (window.cordova && window.cordova.plugins.Keyboard) {
           cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+          // empecher le clavier de faire faire un bon vers le haut à la webview au focus sur un champ
+          // cordova.plugins.Keyboard.disableScroll(true);
         }
         if (window.StatusBar) {
           // org.apache.cordova.statusbar required

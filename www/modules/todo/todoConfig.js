@@ -20,13 +20,33 @@ angular.module('app.todo')
           }
         })
 
-      .state('app.main.todoDetail', {
-        url: '/app/main/todo/:listId',
-        views: {
-          'app-main-todo': {
-            templateUrl: 'modules/todo/templates/app-main-tasks.html'
+        .state('app.main.todoDetail', {
+
+          url: '/app/main/todo/:listId',
+          views: {
+            'app-main-todo': {
+              templateUrl: 'modules/todo/templates/app-main-tasks.html'
+            }
           }
-        }
-      });
+          /*
+          onEnter: function($ionicPlatform){
+            $ionicPlatform.ready(function() {
+              if(window.cordova ){
+                cordova.plugins.Keyboard.disableScroll(true);
+              }
+
+            });
+          },
+
+          onExit: function($ionicPlatform){
+            $ionicPlatform.ready(function() {
+              if(window.cordova){
+                cordova.plugins.Keyboard.disableScroll(false);
+
+              }
+            });
+          }
+          */
+        });
 
     }]);
