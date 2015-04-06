@@ -5,6 +5,6 @@ node_modules/
 platforms/
 plugins/
 .idea
-www/lib/*
-www/lib/!readme.txt
+#www/lib/*
+#www/lib/!readme.txt
 engine/*

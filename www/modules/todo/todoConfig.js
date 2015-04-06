@@ -28,7 +28,7 @@ angular.module('app.todo')
               templateUrl: 'modules/todo/templates/app-main-tasks.html'
             }
           },
-
+          // disabled webview bounce on focus input field / keyboard apparition
           onEnter: function($ionicPlatform){
             $ionicPlatform.ready(function() {
               if(window.cordova ){
