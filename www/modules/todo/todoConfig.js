@@ -27,8 +27,8 @@ angular.module('app.todo')
             'app-main-todo': {
               templateUrl: 'modules/todo/templates/app-main-tasks.html'
             }
-          }
-          /*
+          },
+
           onEnter: function($ionicPlatform){
             $ionicPlatform.ready(function() {
               if(window.cordova ){
@@ -46,7 +46,7 @@ angular.module('app.todo')
               }
             });
           }
-          */
+
         });
 
     }]);
