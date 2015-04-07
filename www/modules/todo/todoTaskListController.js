@@ -46,9 +46,21 @@ angular.module('app.page')
     };
 
     $scope.deleteTask = function(taskId) {
-      $scope.tasks.splice(taskId, 1);
-      list.tasks = $scope.tasks;
-      todoListFactory.updateList(listId, list);
+      $ionicPopup.confirm({
+        title: 'Supprimer la tache',
+        template: 'Etes vous sûr de vouloir supprimer cette tache ? '
+      })
+      .then(function(res) {
+        if(res) {
+          $scope.tasks.splice(taskId, 1);
+          list.tasks = $scope.tasks;
+          todoListFactory.updateList(listId, list);
+        }
+        else {
+
+        }
+      });
+
     };
 
     $scope.addTasks = function(task) {

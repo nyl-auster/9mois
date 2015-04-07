@@ -1,6 +1,6 @@
 angular.module('app.page')
 
-  .controller('todoListController', ['$scope', 'todoListFactory', '$ionicPopup', function($scope, todoListFactory, $ionicPopup) {
+  .controller('todoListController', ['$ionicPopup', '$scope', 'todoListFactory', '$ionicPopup', function($ionicPopup, $scope, todoListFactory, $ionicPopup) {
 
     $scope.lists = todoListFactory.getTodoLists();
 
@@ -23,16 +23,23 @@ angular.module('app.page')
         list.name = data;
         todoListFactory.updateList(listId, list);
         $scope.lists = todoListFactory.getTodoLists();
-      })
-      .finally(function(){
+      }).finally(function(){
 
       });
 
     };
 
     $scope.deleteList = function(listId) {
-      todoListFactory.deleteList(listId);
-      $scope.lists = todoListFactory.getTodoLists();
+      $ionicPopup.confirm({
+        title: 'Supprimer la tache',
+        template: 'Etes vous sûr de vouloir supprimer cette tache ? '
+      }).then(function(res) {
+        if(res) {
+          todoListFactory.deleteList(listId);
+          $scope.lists = todoListFactory.getTodoLists();
+        }
+      })
+
     };
 
     $scope.add = function() {
