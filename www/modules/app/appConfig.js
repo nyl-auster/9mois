@@ -29,18 +29,6 @@ angular.module('app')
 
     ]);
 
-    $stateProvider
-
-      .state('app.main.home', {
-        url: '/app/main/home',
-        views: {
-          'app-main-home': {
-            templateUrl: 'modules/app/templates/app-main-home.html'
-          }
-        }
-      });
-
-
 
   }]);
 

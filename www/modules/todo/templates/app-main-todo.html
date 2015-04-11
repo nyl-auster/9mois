@@ -1,10 +1,34 @@
+<ion-view view-title="Listes" ng-controller="todoListController">
 
-<ion-view view-title="Listes">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-plus" ng-click="add()">
+        </button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-minus" ng-click="toggleDelete()"></button>
+    </ion-nav-buttons>
 
     <ion-content>
-    Listes
+        <ion-list show-delete="showDelete">
+            <ion-item ui-sref="app.main.todoDetail({listId: $index})" class="item-text-wrap" ng-repeat="list in lists track by $index">
 
+                <ion-delete-button
+                        class="ion-minus-circled"
+                        ng-click="deleteList({{$index}})">
+                </ion-delete-button>
 
+                {{list.name }}
+
+                <div class="item-button-right">
+
+                <a ng-click="updateList({{$index}})" class="button button-clear">
+                    <i  class="icon ion-compose"></i>
+                </a>
+                </div>
+
+            </ion-item>
+        </ion-list>
     </ion-content>
 
 </ion-view>

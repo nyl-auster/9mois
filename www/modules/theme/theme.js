@@ -1,6 +1,6 @@
 /**
  * Themes
  */
-angular.module('app.page', [
+angular.module('app.theme', [
   'app.base'
 ]);

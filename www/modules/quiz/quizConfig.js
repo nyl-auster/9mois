@@ -1,5 +1,5 @@
 
-angular.module('app.page')
+angular.module('app.quiz')
 
   // create our states; this is some kind of advanced router for our app.
   // states machines allow ionic module to build automatically a "back" button
@@ -11,20 +11,20 @@ angular.module('app.page')
 
       $stateProvider
 
-        .state('app.main.theme', {
-          url: '/app/main/theme',
+        .state('app.main.quiz', {
+          url: '/app/main/quiz/:themeId',
           views: {
             'app-main-theme': {
-              templateUrl: 'app-main-theme.html'
+              templateUrl: 'modules/quiz/templates/app-main-quiz.html'
             }
           }
         })
 
-        .state('app.main.themePage', {
-          url: '/app/main/page',
+        .state('app.main.quizDetail', {
+          url: '/app/main/quiz/:quizId',
           views: {
             'app-main-theme': {
-              templateUrl: 'app-main-theme-page.html'
+              templateUrl: 'modules/quiz/templates/app-main-quizDetail.html'
             }
           }
         });

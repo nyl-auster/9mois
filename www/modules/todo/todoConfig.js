@@ -15,7 +15,7 @@ angular.module('app.todo')
           url: '/app/main/todo',
           views: {
             'app-main-todo': {
-              templateUrl: 'app-main-todo.html'
+              templateUrl: 'modules/todo/templates/app-main-todo.html'
             }
           }
         })

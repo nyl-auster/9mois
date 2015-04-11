@@ -1,6 +1,9 @@
 
 /**
- * Master module, calling all other modules.
+ * Master module, initialized by ng-app directive.
+ * We can enable / disabled app modules here, by adding them
+ * as a dependency of this module.
+ *
  * @see https://docs.angularjs.org/guide/module
  */
 angular.module('app', [
@@ -8,10 +11,11 @@ angular.module('app', [
     // 'app.authentication',
     // 'app.user',
     // 'app.onboard',
-    'app.page',
-    'app.todo',
+    // 'app.todo',
+    'app.theme',
+    'app.quiz',
     'app.week',
-    'app.jsonStore',
+    'app.jsonStore'
   ])
 
   .run([

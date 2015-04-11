@@ -1,6 +1,9 @@
 /**
  * Base module.
+ *
  * Things needed by all other modules goes here.
+ * It defines the tabs views
+ *
  * Every module depends on base module.
  */
 angular.module('app.base', [
@@ -11,6 +14,10 @@ angular.module('app.base', [
   'ngCordova'
 ]);
 
+/**
+ * Directive to let textare grow automaticcally when additionnal text
+ * is entered.
+ */
 angular.module('app.base').directive('autoGrow', function() {
   return function(scope, element, attr){
 

@@ -1,4 +1,4 @@
-angular.module('app.page').factory('todoListFactory', ['jsonStoreFactory', function(jsonStoreFactory) {
+angular.module('app.theme').factory('todoListFactory', ['jsonStoreFactory', function(jsonStoreFactory) {
 
   var jsonStoreKey = 'todoLists';
 

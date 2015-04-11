@@ -1,8 +1,14 @@
-<ion-view view-title="Week">
-
+<ion-view view-title="Week" ng-controller="weekController">
     <ion-content>
+        <div class="card">
+            <div class="item item-text-wrap">
 
-        Week view
-
+                <p>
+                    <img style="float:left;padding:10px" width="200px" ng-src="img/week-1-image.jpg">
+                    {{::textOfTheWeek}}
+                </p>
+            </div>
+            <a class="button button-balanced" ng-click="vibrer()"> Vibrer </a>
+        </div>
     </ion-content>
 </ion-view>

@@ -30,11 +30,11 @@ angular.module('app.base')
           template:'State not found'
         })
 
-        // Abstract root of app.main
+        // Abstract root of app.main, this is where tabs are defined
         .state('app.main', {
           abstract: true,
           // children states templates will be inserted here
-          templateUrl:'app-main.html'
+          templateUrl:'modules/base/templates/app-main.html'
         });
 
     }]);

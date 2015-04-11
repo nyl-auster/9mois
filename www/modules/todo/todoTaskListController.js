@@ -1,4 +1,4 @@
-angular.module('app.page')
+angular.module('app.theme')
 
   .controller('todoTaskListController', ['$scope', '$ionicPopup', 'todoListFactory', '$stateParams', function($scope, $ionicPopup, todoListFactory, $stateParams) {
 

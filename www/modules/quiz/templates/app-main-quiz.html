@@ -1,0 +1,15 @@
+
+<ion-view view-title="Questionnaires" ng-controller="quizListController">
+
+    <ion-content>
+        <ion-list>
+
+            <ion-item ui-sref="app.main.quizDetail({quizId: quiz.id})" class="item-icon-right" ng-repeat="quiz in quizzes">
+                {{ quiz.name }}
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>
