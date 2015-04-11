@@ -1,5 +1,5 @@
 /**
- * Themes
+ * Quiz
  */
 angular.module('app.quiz', [
   'app.base',

@@ -15,7 +15,7 @@ angular.module('app.quiz')
           url: '/app/main/quiz/:themeId',
           views: {
             'app-main-theme': {
-              templateUrl: 'modules/quiz/templates/app-main-quizList.html'
+              templateUrl: 'modules/quiz/templates/quizList.html'
             }
           }
         })
@@ -24,7 +24,7 @@ angular.module('app.quiz')
           url: '/app/main/quiz/:quizId',
           views: {
             'app-main-theme': {
-              templateUrl: 'modules/quiz/templates/app-main-quizDetail.html'
+              templateUrl: 'modules/quiz/templates/quizDetail.html'
             }
           }
         })
@@ -34,7 +34,7 @@ angular.module('app.quiz')
           cache: false,
           views: {
             'app-main-journal': {
-              templateUrl: 'modules/quiz/templates/app-main-journal.html'
+              templateUrl: 'modules/quiz/templates/journal.html'
             }
           }
         });

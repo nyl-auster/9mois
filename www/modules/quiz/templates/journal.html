@@ -5,8 +5,11 @@
 
         <div class="card padding" ng-repeat="datas in allDatas">
 
+            <h2>{{ datas._definition.name }}</h2>
 
-            <div ng-include="datas._definition.templateViewUrl"></div>
+            <div ng-include="datas._definition.templateViewUrl">
+
+            </div>
 
         </div>
 
