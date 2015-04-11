@@ -7,12 +7,13 @@
  * @see https://docs.angularjs.org/guide/module
  */
 angular.module('app', [
-    // 'app.routerUiDebug', // display ui-router events
+    'app.routerUiDebug', // display ui-router events
     // 'app.authentication',
     // 'app.user',
     // 'app.onboard',
     // 'app.todo',
     // 'app.week'
+    'app.language',
     'app.theme',
     'app.quiz'
   ])

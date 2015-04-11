@@ -1,4 +1,4 @@
-
+/*
 angular.module('app.quiz').directive("quizInputText", function() {
   return {
     restrict: "E",
@@ -9,3 +9,4 @@ angular.module('app.quiz').directive("quizInputText", function() {
     }
   };
 });
+*/

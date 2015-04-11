@@ -1,20 +1,25 @@
-/**
- * This module hold app configuration for now.
- * Inject "config" in controllers / services etc ... to use.
- */
-angular.module('app.config', [])
+angular.module('app.config')
 
-  .constant('config', {
+  .config(['$stateProvider', function($stateProvider) {
 
-    // base url for webservices, point to nodejs server
-    serverUrl: 'http://91.121.166.167:3333',
-    themes: [
-      'Les questions de la semaine',
-      'Le bébé',
-      "L'arbre généalogique",
-      "Votre moitié et vous",
-    ]
+    $stateProvider
 
-  });
+      // update onboard.html, inserting onboard.app-main-home.html template when
+      // onboard/home is the url.
+      // templates is an object because when need to inform router UI of which templates
+      // we want to update in onboard.html
+      .state('app.main.config', {
+        url : "/app/main/config",
+        views: {
+          // this is the value of "name" attribute of ion-nav-view from parent state template.
+          'app-main-config': {
+            templateUrl: 'modules/config/templates/config.html'
+          }
+        }
+      })
+
+
+
+  }]);
 
 

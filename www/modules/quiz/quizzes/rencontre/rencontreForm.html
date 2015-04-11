@@ -1,5 +1,6 @@
 <div ng-controller="rencontreFormController">
 
+
     Ton papa s'appelle <input ng-blur="$parent.saveQuizDatas(datas)" type="text" ng-model="datas.perePrenom">
     et il a <input ng-blur="$parent.saveQuizDatas(datas)" type="text" ng-model="datas.pereAge"> ans.
     Ta maman s'appelle <input ng-blur="$parent.saveQuizDatas(datas)" type="text" ng-model="datas.merePrenom">
@@ -7,6 +8,16 @@
 
     Nous nous sommes rencontrés :  (ville, lieu et date de la rencontre).
     <textarea ng-blur="$parent.saveQuizDatas(datas)" auto-grow ng-model="datas.rencontreDescription"></textarea>
+
+    C'était : le matin, l'après-midi, le soir.
+    (aurore, plein soleil, lune)
+
+    La première fois que nous nous sommes parlé, c'était : banal, chaotique, simple, orageux, joyeux, innocent, pour le travail.
+
+    C'était : un coup de foudre, une histoire compliquée, un long fleuve tranquille, une histoire de conte de fée, une étincelle dans le quotidien, une vraie comédie.
+
+    Un détail de ce jour là : ___ .
+
 
 
 </div>
