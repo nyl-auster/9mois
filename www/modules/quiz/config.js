@@ -27,6 +27,15 @@ angular.module('app.quiz')
               templateUrl: 'modules/quiz/templates/app-main-quizDetail.html'
             }
           }
+        })
+
+        .state('app.main.journal', {
+          url: '/app/main/journal',
+          views: {
+            'app-main-journal': {
+              templateUrl: 'modules/quiz/templates/app-main-journal.html'
+            }
+          }
         });
 
     }]);

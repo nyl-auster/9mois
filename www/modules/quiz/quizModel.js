@@ -41,7 +41,13 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'jsonStoreFactory', 
     },
 
     getAll: function() {
-      return quizzes;
+      var storedQuizzes = jsonStoreFactory.read(jsonStoreKey);
+      var model = this;
+      angular.forEach(storedQuizzes, function(value, key) {
+        storedQuizzes[key]['_definition'] = model.getDefinition(key);
+      });
+      console.log(storedQuizzes);
+      return storedQuizzes;
     },
 
     getDefinition: function(id) {

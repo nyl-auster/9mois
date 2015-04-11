@@ -1,0 +1,15 @@
+
+<ion-view view-title="{{quiz.name}}" ng-controller="journalController">
+
+    <ion-content>
+
+        <div class="card padding" ng-repeat="datas in allDatas">
+
+
+            <div ng-include="datas._definition.templateViewUrl"></div>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>
