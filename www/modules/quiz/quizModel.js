@@ -46,8 +46,12 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'jsonStoreFactory', 
       angular.forEach(storedQuizzes, function(value, key) {
         storedQuizzes[key]['_definition'] = model.getDefinition(key);
       });
-      console.log(storedQuizzes);
       return storedQuizzes;
+    },
+
+    getAllFilled: function() {
+      var datas = this.getAll();
+      return datas;
     },
 
     getDefinition: function(id) {
@@ -65,6 +69,14 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'jsonStoreFactory', 
       var storedQuizzes = jsonStoreFactory.read(jsonStoreKey);
       storedQuizzes[id] = quizDatas;
       jsonStoreFactory.write(jsonStoreKey, storedQuizzes);
+    },
+
+    // return true if quizDatas are empty
+    // (all variables considered as empty string, except "_definition" special key
+    isFilled: function(quizDatas) {
+      angular.forEach(quizDatas, function(value, key) {
+        console.log(value);
+      });
     }
 
   }
