@@ -12,10 +12,9 @@ angular.module('app', [
     // 'app.user',
     // 'app.onboard',
     // 'app.todo',
+    // 'app.week'
     'app.theme',
-    'app.quiz',
-    'app.week',
-    'app.jsonStore'
+    'app.quiz'
   ])
 
   .run([

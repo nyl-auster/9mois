@@ -11,7 +11,8 @@ angular.module('app.base', [
   'ionic',
   'app.config',
   'pascalprecht.translate',
-  'ngCordova'
+  'ngCordova',
+  'app.jsonStore'
 ]);
 
 /**
