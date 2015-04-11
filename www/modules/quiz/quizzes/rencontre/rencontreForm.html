@@ -1,0 +1,12 @@
+<div ng-controller="rencontreFormController">
+
+    Ton papa s'appelle <input ng-blur="$parent.saveQuizDatas(datas)" type="text" ng-model="datas.perePrenom">
+    et il a <input ng-blur="$parent.saveQuizDatas(datas)" type="text" ng-model="datas.pereAge"> ans.
+    Ta maman s'appelle <input ng-blur="$parent.saveQuizDatas(datas)" type="text" ng-model="datas.merePrenom">
+    et elle a <input ng-blur="$parent.saveQuizDatas(datas)" type="text" ng-model="datas.mereAge"> ans.
+
+    Nous nous sommes rencontrés :  (ville, lieu et date de la rencontre).
+    <textarea ng-blur="$parent.saveQuizDatas(datas)" auto-grow ng-model="datas.rencontreDescription"></textarea>
+
+
+</div>

@@ -20,7 +20,7 @@
          };
 
          // triggered by click on the submit button on login form
-         // @see login-form.html
+         // @see login-rencontreForm.html
          $scope.signIn = function(user) {
 
            // log in user to the server

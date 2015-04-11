@@ -15,7 +15,7 @@ angular.module('app.quiz')
           url: '/app/main/quiz/:themeId',
           views: {
             'app-main-theme': {
-              templateUrl: 'modules/quiz/templates/app-main-quiz.html'
+              templateUrl: 'modules/quiz/templates/app-main-quizList.html'
             }
           }
         })

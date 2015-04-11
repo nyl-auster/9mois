@@ -1,26 +1,36 @@
+/**
+ * Agnostic persistence model for quiz.
+ */
+angular.module('app.quiz').factory('quizModel', ['$filter', 'jsonStoreFactory', function($filter, jsonStoreFactory) {
 
-angular.module('app.quiz').factory('quizModel', ['$filter', function($filter) {
+  var jsonStoreKey = 'quizzes';
 
   var quizzes = [
     {
+      id: 'histoire_debut',
       theme_id: 'trimestre_1',
-      name: "questionnaire 1",
-      id: 1
+      name: "Comment l'histoire a commencé",
+      templateFormUrl: "modules/quiz/quizzes/rencontre/rencontreForm.html",
+      templateViewUrl: "modules/quiz/quizzes/rencontre/rencontreView.html",
+      datas: {}
     },
     {
+      id: '2',
       theme_id: 'trimestre_1',
-      id: 2,
-      name: "questionnaire 2"
+      name: "questionnaire 2",
+      datas: {}
     },
     {
-      id: 3,
+      id: '3',
       theme_id: 'trimestre_1',
-      name: 'questionnaire 3'
+      name: 'questionnaire 3',
+      datas: {}
     },
     {
+      id: '4',
       theme_id: 'trimestre_3',
-      id: 4,
-      name: 'questionnaire 4'
+      name: 'questionnaire 4',
+      datas: {}
     }
   ];
 
@@ -34,10 +44,21 @@ angular.module('app.quiz').factory('quizModel', ['$filter', function($filter) {
       return quizzes;
     },
 
-    getSingleById: function(id) {
-      console.log(id);
-      quizzes = $filter('filter')(quizzes, {id: id});
-      return quizzes[0];
+    getDefinition: function(id) {
+      var result = $filter('filter')(quizzes, {id: id});
+      return result[0];
+    },
+
+    get: function(id) {
+      var storedQuizzes = jsonStoreFactory.read(jsonStoreKey);
+      return storedQuizzes[id];
+    },
+
+    // update stored quizzes datas for a particular quizz
+    save: function(id, quizDatas) {
+      var storedQuizzes = jsonStoreFactory.read(jsonStoreKey);
+      storedQuizzes[id] = quizDatas;
+      jsonStoreFactory.write(jsonStoreKey, storedQuizzes);
     }
 
   }

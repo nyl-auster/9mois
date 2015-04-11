@@ -1,10 +1,14 @@
 
 angular.module('app.quiz').controller('quizDetailController', ['$stateParams', '$scope', 'quizModel', function($stateParams, $scope, quizModel) {
 
-  var id = $stateParams.quizId;
+  var quizId = $stateParams.quizId;
 
-  var quizzes = quizModel.getSingleById(id);
-  console.log(quizzes);
-  $scope.quizz = quizzes
+  var quiz = quizModel.getDefinition(quizId);
+  $scope.quiz = quiz;
+  $scope.datas = quizModel.get(quizId);
+
+  $scope.saveQuizDatas = function(quizDatas) {
+    quizModel.save(quizId, quizDatas);
+  };
 
 }]);

@@ -15,7 +15,7 @@ angular.module('app.theme')
           url: '/app/main/theme',
           views: {
             'app-main-theme': {
-              templateUrl: 'modules/theme/templates/app-main-theme.html'
+              templateUrl: 'modules/theme/templates/themeList.html'
             }
           }
         });

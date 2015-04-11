@@ -54,8 +54,8 @@ angular.module('app.jsonStore').factory('jsonStoreFactory', ['localStorageFactor
     read: function(key) {
 
       var storedJson = localStorageFactory.getObject('appJsonStore');
-      if (Object.getOwnPropertyNames(storedJson).length === 0) {
-        return false;
+      if (!angular.isDefined(storedJson.staging) || !angular.isDefined(storedJson.staging.local.datas[key])) {
+        return {};
       }
 
       var datas = storedJson.staging.local.datas[key].datas;

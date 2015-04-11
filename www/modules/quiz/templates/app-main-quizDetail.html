@@ -1,13 +1,13 @@
 
-<ion-view view-title="Detail question" ng-controller="quizDetailController">
+<ion-view view-title="{{quiz.name}}" ng-controller="quizDetailController">
 
     <ion-content>
-        <ion-list>
 
-            {{quizz.id}}
-             {{quizz.name}}
+        <div class="card padding">
 
-        </ion-list>
+            <div ng-include="quiz.templateFormUrl"></div>
+
+        </div>
 
     </ion-content>
 
