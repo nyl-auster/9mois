@@ -31,6 +31,7 @@ angular.module('app.quiz')
 
         .state('app.main.journal', {
           url: '/app/main/journal',
+          cache: false,
           views: {
             'app-main-journal': {
               templateUrl: 'modules/quiz/templates/app-main-journal.html'
