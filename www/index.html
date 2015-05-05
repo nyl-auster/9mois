@@ -9,10 +9,13 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <script src="lib/lodash/lodash.min.js"></script>
+
 
     <!-- angular js modules -->
     <script src="lib/angular-cookies/angular-cookies.js"></script>
@@ -20,17 +23,16 @@
     <script src="lib/angular-translate/angular-translate.js"></script>
     <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="lib/angular-cached-resource/angular-cached-resource.min.js"></script>
+    <script src="lib/angular-elastic-input/dist/angular-elastic-input.min.js"></script>
 
 
-    <!-- Modules -->
-    <script src="modules/config/index.js"></script>
-
-    <!-- main app's js -->
     <script src="modules/base/base.js"></script>
     <script src="modules/base/baseConfig.js"></script>
 
     <script src="modules/config/index.js"></script>
     <script src="modules/config/config.js"></script>
+    <script src="modules/config/controllers/configController.js"></script>
+    <script src="modules/config/configModel.js"></script>
 
     <script src="modules/routerUiDebug/routerUiDebug.js"></script>
 
@@ -66,10 +68,11 @@
     <script src="modules/quiz/directives.js"></script>
     <script src="modules/quiz/models/quizDefinitionModel.js"></script>
     <script src="modules/quiz/controllers/quizListController.js"></script>
-    <script src="modules/quiz/controllers/quizDetailController.js"></script>
+    <script src="modules/quiz/controllers/quizFormParentController.js"></script>
     <script src="modules/quiz/controllers/journalController.js"></script>
 
     <script src="modules/quiz/quizzes/rencontre/rencontreFormController.js"></script>
+    <script src="modules/quiz/quizzes/rencontre/rencontreViewController.js"></script>
 
     <!--
     <script src="modules/todo/todo.js"></script>

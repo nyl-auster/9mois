@@ -1,5 +1,5 @@
 
-angular.module('app.quiz').controller('quizDetailController', ['$stateParams', '$scope', 'quizDefinitionModel', 'quizModel', function($stateParams, $scope, quizDefinitionModel, quizModel) {
+angular.module('app.quiz').controller('quizFormParentController', ['$stateParams', '$scope', 'quizDefinitionModel', 'quizModel', function($stateParams, $scope, quizDefinitionModel, quizModel) {
 
   var quizId = $stateParams.quizId;
 

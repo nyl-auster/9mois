@@ -12,7 +12,8 @@ angular.module('app.base', [
   'app.config',
   'pascalprecht.translate',
   'ngCordova',
-  'app.jsonStore'
+  'app.jsonStore',
+  'puElasticInput'
 ]);
 
 /**

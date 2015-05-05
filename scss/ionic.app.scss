@@ -52,6 +52,17 @@ ion-header-bar .button {
  // background: none;
 }
 
+input.quiz-input[type=text] {
+  border-bottom: solid silver 1px;
+  display: inline;
+  font-weight: bold;
+}
+
+textarea.quiz {
+  border-bottom: solid silver 1px;
+  font-weight: bold;
+}
+
 
 
 

@@ -1,10 +1,22 @@
 
-<ion-view view-title="Configuration">
+<ion-view view-title="Configuration" ng-controller="configController">
 
 
     <ion-content class="configuration">
 
-        Hello configuration page.
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Langue
+            </div>
+
+
+            <select ng-blur="saveConfig(config)"
+                    ng-model="config.language">
+                <options ng-repeat="language in config.enabledLanguages">
+                    {{language}}
+                    </options>
+            </select>
+        </label>
 
     </ion-content>
 </ion-view>
