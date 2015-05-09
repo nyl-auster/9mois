@@ -24,7 +24,7 @@ angular.module('app.quiz')
           url: '/app/main/quiz/:quizId',
           views: {
             'app-main-theme': {
-              templateUrl: 'modules/quiz/templates/quizDetail.html'
+              templateUrl: 'modules/quiz/templates/quizForm.html'
             }
           }
         })

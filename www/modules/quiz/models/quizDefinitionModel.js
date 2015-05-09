@@ -9,33 +9,36 @@ angular.module('app.quiz')
 
   var quizzes = [
     {
-      id: 'histoire_debut_fr',
+      // machine name / id of this quiz
+      id: 'rencontre',
+      // only for language :
       language: 'fr',
+      // le theme auquel appartient ce quiz
       theme_id: 'trimestre_1',
+      // le titre du quiz
       name: "Comment l'histoire a commencé",
+      // le template à utiliser pour le formulaire du quiz
       templateFormUrl: "modules/quiz/quizzes/rencontre/rencontreForm.html",
+      // le template à utiliser pour afficher les résultats du quiz
       templateViewUrl: "modules/quiz/quizzes/rencontre/rencontreView.html",
-      schema: {
+      // données du quiz : description des variables à renseigner par l'utilisateur
+      datas: {
         rencontreMoment: {
-          prefix: '',
-          suffix: '',
           options: [
-            { text: "le matin", ngTrueValue: "'matin'", checked:false },
-            { text: "l'après midi", ngTrueValue: "'apres_midi'", checked:false },
-            { text: "le soir", ngTrueValue: "'soir'", checked:false }
+            { label: "le matin", value: "matin", selected: false},
+            { label: "l'après midi", value: 'apres_midi', selected :false },
+            { label: "le soir", value: 'soir', selected: false }
           ]
         },
         rencontrePremiereConversation: {
-          prefix: '',
-          suffix: '',
           options: [
-            { text: "banal", value: "banal" },
-            { text: "chaotique", value: "chaotique" },
-            { text: "simple", value: "simple" },
-            { text: "orageux", value: "orageux" },
-            { text: "joyeux", value: "joyeux" },
-            { text: "innocent", value: "innocent" },
-            { text: "pour le travail", value: "pour_le_travail" }
+            { label: "banal", value: "banal" },
+            { label: "chaotique", value: "chaotique" },
+            { label: "simple", value: "simple" },
+            { label: "orageux", value: "orageux" },
+            { label: "joyeux", value: "joyeux" },
+            { label: "innocent", value: "innocent" },
+            { label: "pour le travail", value: "pour_le_travail" }
           ]
         }
       }
@@ -72,7 +75,7 @@ angular.module('app.quiz')
 
     getOptionLabel: function(id, variableName, value) {
       var quizzDefinition = this.get(id);
-      var options = quizzDefinition.schema[variableName].options;
+      var options = quizzDefinition.datas[variableName].options;
       var result = $filter('filter')(options, {value: value});
       return result[0].text;
     },

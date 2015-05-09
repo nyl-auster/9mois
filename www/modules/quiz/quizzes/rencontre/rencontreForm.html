@@ -1,4 +1,4 @@
-<div ng-controller="rencontreFormController">
+<div ng-controller="rencontreFormController" xmlns="http://www.w3.org/1999/html">
 
     Ton papa s'appelle
     <input
@@ -48,18 +48,19 @@
     -->
 
     C'était : le matin, l'après-midi, le soir. (aurore, plein soleil, lune)
-    <ion-checkbox ng-repeat="item in rencontreMomentOptions"
-    ng-model="item.checked"
-    ng-checked="item.checked"
-     ng-true-value="item.ngTrueValue">
-    {{ item.text }}
-    </ion-checkbox>
 
+    <ion-checkbox ng-repeat="option in quiz.datas.rencontreMoment.options"
+                  ng-checked="option.selected"
+                  ng-click="$parent.saveQuizDatas(datas)"
+                  ng-model="option.selected"
+            > {{ option.label }}</ion-checkbox>
+    <label>Autre</label>
+    <input ng-model="datas.rencontreMoment.autre" ng-blur="$parent.saveQuizDatas(datas)" type="text">
+
+    <!--
     <label ng-repeat="option in datas.rencontreMomentOptions">
         <input type="checkbox" checklist-model="datas.rencontreMomentOptions" checklist-value="datas.rencontreMoment">
     </label>
-
-    {{rencontreMomentOptions}}
 
     <br />
     La première fois que nous nous sommes parlé, c'était : banal, chaotique, simple, orageux, joyeux, innocent, pour le travail.
@@ -69,6 +70,5 @@
         {{ item.text }}
     </ion-radio>
 
-
-
+    -->
 </div>
