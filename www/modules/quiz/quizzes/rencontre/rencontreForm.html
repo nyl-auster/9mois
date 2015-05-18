@@ -1,61 +1,60 @@
-<div ng-controller="rencontreFormController" xmlns="http://www.w3.org/1999/html">
+<div ng-controller="rencontreFormController">
 
     Ton papa s'appelle
+
     <input
             class="quiz-input"
             pu-elastic-input-minwidth="60px"
             pu-elastic-input
-            ng-blur="$parent.saveQuizDatas(datas)"
+            ng-blur="saveQuizDatas(datas)"
             type="text"
             ng-model="datas.perePrenom" >
 
     et il a
+
     <input class="quiz-input"
-           ng-blur="$parent.saveQuizDatas(datas)"
+           ng-blur="saveQuizDatas(datas)"
            pu-elastic-input
            pu-elastic-input-minwidth="40px"
            type="text"
            ng-model="datas.pereAge"> ans.
+
     Ta maman s'appelle
+
     <input  class="quiz-input"
             pu-elastic-input
             pu-elastic-input-minwidth="40px"
-            ng-blur="$parent.saveQuizDatas(datas)"
+            ng-blur="saveQuizDatas(datas)"
             type="text"
             ng-model="datas.merePrenom">
+
     et elle a
 
     <input
             class="quiz-input"
             pu-elastic-input
             pu-elastic-input-minwidth="40px"
-            ng-blur="$parent.saveQuizDatas(datas)"
+            ng-blur="saveQuizDatas(datas)"
             type="text"
             ng-model="datas.mereAge"> ans.
 
     Nous nous sommes rencontrés :  (ville, lieu et date de la rencontre).
 
-    <textarea class="quiz" ng-blur="$parent.saveQuizDatas(datas)" auto-grow ng-model="datas.rencontreDescription"></textarea>
+    <textarea class="quiz" ng-blur="saveQuizDatas(datas)" auto-grow ng-model="datas.rencontreDescription"></textarea>
 
     <br />
 
-    <!--
-    <ion-radio ng-change="$parent.saveQuizDatas(datas)" ng-repeat="item in rencontreMomentOptions"
-               ng-value="item.value"
-               ng-model="datas.rencontreMoment">
-        {{ item.text }}
-    </ion-radio>
-    -->
-
-    C'était : le matin, l'après-midi, le soir. (aurore, plein soleil, lune)
-
-    <ion-checkbox ng-repeat="option in quiz.datas.rencontreMoment.options"
-                  ng-checked="option.selected"
-                  ng-click="$parent.saveQuizDatas(datas)"
-                  ng-model="option.selected"
+    C'était : 
+    <ion-checkbox ng-repeat="option in quiz.schema.rencontreMoment.options"
+                  ng-checked="datas.rencontreMoment.selected[option.value]"
+                  ng-click="saveQuizDatas(datas)"
+                  ng-model="datas.rencontreMoment.selected[option.value]"
             > {{ option.label }}</ion-checkbox>
     <label>Autre</label>
-    <input ng-model="datas.rencontreMoment.autre" ng-blur="$parent.saveQuizDatas(datas)" type="text">
+    <input ng-model="datas.rencontreMoment.autre" ng-blur="saveQuizDatas(datas)" type="text">
+
+
+
 
     <!--
     <label ng-repeat="option in datas.rencontreMomentOptions">

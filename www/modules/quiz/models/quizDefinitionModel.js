@@ -10,19 +10,26 @@ angular.module('app.quiz')
   var quizzes = [
     {
       // machine name / id of this quiz
+      // CHANGE ID ONLY IF YOU KNOW WHAT YOU ARE DOING
       id: 'rencontre',
+
       // only for language :
       language: 'fr',
+
       // le theme auquel appartient ce quiz
       theme_id: 'trimestre_1',
+
       // le titre du quiz
       name: "Comment l'histoire a commencé",
+
       // le template à utiliser pour le formulaire du quiz
       templateFormUrl: "modules/quiz/quizzes/rencontre/rencontreForm.html",
+
       // le template à utiliser pour afficher les résultats du quiz
       templateViewUrl: "modules/quiz/quizzes/rencontre/rencontreView.html",
+
       // données du quiz : description des variables à renseigner par l'utilisateur
-      datas: {
+      schema: {
         rencontreMoment: {
           options: [
             { label: "le matin", value: "matin", selected: false},
