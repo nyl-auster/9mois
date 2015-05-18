@@ -44,30 +44,14 @@
 
     <br />
 
-    C'était : 
+    C'était :
     <ion-checkbox ng-repeat="option in quiz.schema.rencontreMoment.options"
                   ng-checked="datas.rencontreMoment.selected[option.value]"
                   ng-click="saveQuizDatas(datas)"
                   ng-model="datas.rencontreMoment.selected[option.value]"
             > {{ option.label }}</ion-checkbox>
     <label>Autre</label>
-    <input ng-model="datas.rencontreMoment.autre" ng-blur="saveQuizDatas(datas)" type="text">
+    <input ng-model="datas.rencontreMoment.other" ng-blur="saveQuizDatas(datas)" type="text">
 
 
-
-
-    <!--
-    <label ng-repeat="option in datas.rencontreMomentOptions">
-        <input type="checkbox" checklist-model="datas.rencontreMomentOptions" checklist-value="datas.rencontreMoment">
-    </label>
-
-    <br />
-    La première fois que nous nous sommes parlé, c'était : banal, chaotique, simple, orageux, joyeux, innocent, pour le travail.
-    <ion-radio ng-change="$parent.saveQuizDatas(datas)" ng-repeat="item in rencontrePremiereConversationOptions"
-               ng-value="item.value"
-               ng-model="datas.rencontrePremiereConversation">
-        {{ item.text }}
-    </ion-radio>
-
-    -->
 </div>

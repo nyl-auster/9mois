@@ -4,6 +4,6 @@ angular.module('app.quiz')
 
 
     var quizDefinition = $scope.datas._definition;
-    //$scope.datas.rencontreMoment =  quizDefinitionModel.getOptionLabel($scope.datas._definition.id, 'rencontreMoment', $scope.datas.rencontreMoment);
+    $scope.datas.rencontreMoment =  $scope.displayOptions($scope.datas.rencontreMoment, $scope.datas._definition.schema.rencontreMoment);
 
   }]);
