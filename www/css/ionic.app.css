@@ -7640,7 +7640,6 @@ a.button {
   .view-trimestres .trimestre-links a {
     position: absolute;
     display: inline-block;
-    border: solid black 1px;
     width: 57%;
     height: 8%;
     left: 21%; }
