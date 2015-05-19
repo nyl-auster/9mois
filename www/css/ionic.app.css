@@ -7640,12 +7640,13 @@ a.button {
   .view-trimestres .trimestre-links a {
     position: absolute;
     display: inline-block;
-    width: 53%;
-    height: 5%;
-    left: 23%; }
+    border: solid black 1px;
+    width: 57%;
+    height: 8%;
+    left: 21%; }
   .view-trimestres .trimestre-links a#trimestre-1 {
-    top: 32%; }
+    top: 30.5%; }
   .view-trimestres .trimestre-links a#trimestre-2 {
-    top: 40%; }
+    top: 38.5%; }
   .view-trimestres .trimestre-links a#trimestre-3 {
-    top: 48%; }
+    top: 47.5%; }
