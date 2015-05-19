@@ -18,7 +18,7 @@ $dark:                            #444 !default;
 $stable:                          #8E9EA7 !default;
 $base-background-color:           #DAE8F0 !default;
 
-  // Tabs
+// Tabs
 // -------------------------------
 
 .tab-item .icon {
@@ -38,8 +38,8 @@ ion-header-bar .button {
 }
 
 .tab-nav {
- background: transparent !important;
- background-color: rgba(106, 78, 116, 0.4) !important;
+  background: transparent !important;
+  background-color: rgba(106, 78, 116, 0.4) !important;
 }
 
 .todo-tasks-list .item-input-wrapper {
@@ -48,8 +48,8 @@ ion-header-bar .button {
 }
 
 .todo-tasks-list .item-input-inset textarea {
- // width: 100%;
- // background: none;
+  // width: 100%;
+  // background: none;
 }
 
 input.quiz-input[type=text] {
@@ -71,5 +71,41 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+/**
+ * Liste des trimestres
+ */
+
+.view-trimestres {
+
+  .trimestre-links{
+
+    a {
+      position: absolute;
+      display: inline-block;
+
+      width:53%;
+      height: 5%;
+      left:23%;
+    }
+
+    a#trimestre-1{
+      top:32%;
+    }
+
+
+    a#trimestre-2{
+      top:40%;
+    }
+
+    a#trimestre-3{
+      top:48%;
+    }
+
+  }
+
+  /*background : url("../img/background-trimestres.png");
+  background-size: cover;*/
+}
 
 

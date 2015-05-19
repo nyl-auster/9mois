@@ -4,7 +4,7 @@ angular.module('app.quiz').controller('journalController', ['$stateParams', '$sc
   var allDatas = quizModel.getAllFilled();
   $scope.allDatas = allDatas;
 
-  
+
   $scope.displayOptions = function(optionsDatas, optionsMetadatas) {
 
     var selectedOptions = new Array();

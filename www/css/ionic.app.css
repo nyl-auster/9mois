@@ -7630,3 +7630,22 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+/**
+ * Liste des trimestres
+ */
+.view-trimestres {
+  /*background : url("../img/background-trimestres.png");
+  background-size: cover;*/ }
+  .view-trimestres .trimestre-links a {
+    position: absolute;
+    display: inline-block;
+    width: 53%;
+    height: 5%;
+    left: 23%; }
+  .view-trimestres .trimestre-links a#trimestre-1 {
+    top: 32%; }
+  .view-trimestres .trimestre-links a#trimestre-2 {
+    top: 40%; }
+  .view-trimestres .trimestre-links a#trimestre-3 {
+    top: 48%; }
