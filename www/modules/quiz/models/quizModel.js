@@ -10,6 +10,8 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel
     getAll: function() {
       var datas = jsonStoreFactory.read(jsonStoreKey);
       angular.forEach(datas, function(value, key) {
+        // on ajoute une clef speciale "_definition", qui contient
+        // les metadonnées du quizzk !
         datas[key]['_definition'] = quizDefinitionModel.get(key);
       });
       return datas;

@@ -30,7 +30,20 @@ angular.module('app.quiz').factory('quizDefinitionModel', ['$filter', 'languageS
 
       // données du quiz : description des variables à renseigner par l'utilisateur
       schema: {
+        perePrenom: {
+          prefix: "Ton papa s'apelle"
+        },
+        pereAge: {
+          prefix: "et il a"
+        },
+        merePrenom: {
+          prefix: "Ta maman s'appelle"
+        },
+        mereAge: {
+          prefix: "Et elle a"
+        },
         rencontreMoment: {
+          prefix: "Nous nous sommes rencontrés",
           options: [
             { label: "le matin", value: "matin", selected: false},
             { label: "l'après midi", value: 'apres_midi', selected :false },
@@ -38,6 +51,7 @@ angular.module('app.quiz').factory('quizDefinitionModel', ['$filter', 'languageS
           ]
         },
         rencontrePremiereConversation: {
+          prefix: "C'était",
           options: [
             { label: "banal", value: "banal" },
             { label: "chaotique", value: "chaotique" },

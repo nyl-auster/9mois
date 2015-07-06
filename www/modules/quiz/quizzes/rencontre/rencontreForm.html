@@ -1,6 +1,6 @@
 <div ng-controller="rencontreFormController">
 
-    Ton papa s'appelle
+    {{quizDefinition.schema.perePrenom.prefix}}
 
     <input
             class="quiz-input"
@@ -10,7 +10,7 @@
             type="text"
             ng-model="datas.perePrenom" >
 
-    et il a
+    {{quizDefinition.schema.pereAge.prefix}}
 
     <input class="quiz-input"
            ng-blur="saveQuizDatas(datas)"
@@ -19,7 +19,7 @@
            type="text"
            ng-model="datas.pereAge"> ans.
 
-    Ta maman s'appelle
+    {{quizDefinition.schema.merePrenom.prefix}}
 
     <input  class="quiz-input"
             pu-elastic-input
@@ -28,7 +28,7 @@
             type="text"
             ng-model="datas.merePrenom">
 
-    et elle a
+    {{quizDefinition.schema.mereAge.prefix}}
 
     <input
             class="quiz-input"
@@ -45,13 +45,22 @@
     <br />
 
     C'était :
-    <ion-checkbox ng-repeat="option in quiz.schema.rencontreMoment.options"
+    <ion-checkbox ng-repeat="option in quizDefinition.schema.rencontreMoment.options"
                   ng-checked="datas.rencontreMoment.selected[option.value]"
                   ng-click="saveQuizDatas(datas)"
                   ng-model="datas.rencontreMoment.selected[option.value]"
             > {{ option.label }}</ion-checkbox>
     <label>Autre</label>
     <input ng-model="datas.rencontreMoment.other" ng-blur="saveQuizDatas(datas)" type="text">
+
+    La première fois que nous nous sommes parlé c'était
+    <ion-checkbox ng-repeat="option in quizDefinition.schema.rencontrePremiereConversation.options"
+                  ng-checked="datas.rencontrePremiereConversation.selected[option.value]"
+                  ng-click="saveQuizDatas(datas)"
+                  ng-model="datas.rencontrePremiereConversation.selected[option.value]"
+            > {{ option.label }}</ion-checkbox>
+    <label>Autre</label>
+    <input ng-model="datas.rencontrePremiereConversation.other" ng-blur="saveQuizDatas(datas)" type="text">
 
 
 </div>

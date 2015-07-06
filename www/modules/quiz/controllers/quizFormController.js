@@ -6,11 +6,11 @@
  */
 angular.module('app.quiz').controller('quizFormController', ['$stateParams', '$scope', 'quizDefinitionModel', 'quizModel', function($stateParams, $scope, quizDefinitionModel, quizModel) {
 
-  // get quizId from urlÒÒ
+  // get quizId from url
   var quizId = $stateParams.quizId;
 
   // get quizz definition
-  $scope.quiz  = quizDefinitionModel.get(quizId);
+  $scope.quizDefinition  = quizDefinitionModel.get(quizId);
 
   // get datas stored about this quizz
   $scope.datas = quizModel.get(quizId);
@@ -22,7 +22,7 @@ angular.module('app.quiz').controller('quizFormController', ['$stateParams', '$s
   };
 
   $scope.saveOptions = function(options) {
-    console.log(options);
+    //console.log(options);
   }
 
 }]);
