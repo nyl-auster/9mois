@@ -29,7 +29,7 @@ angular.module('app.quiz').factory('quizDefinitionModel', ['$filter', 'languageS
       templateViewUrl: "modules/quiz/quizzes/rencontre/rencontreView.html",
 
       // données du quiz : description des variables à renseigner par l'utilisateur
-      schema: {
+      fields: {
         perePrenom: {
           prefix: "Ton papa s'apelle"
         },

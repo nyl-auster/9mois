@@ -6,7 +6,7 @@ angular.module('app.quiz')
     // en consultant la définition de notre quizz
     // et les réponses sélectionnés précédemment par l'utilisateur sur le
     // formulaire du quizz
-    $scope.datas.rencontreMoment =  $scope.displayOptionsLabel($scope.datas.rencontreMoment, $scope.datas.quizDefinition.schema.rencontreMoment);
-    $scope.datas.rencontrePremiereConversation =  $scope.displayOptionsLabel($scope.datas.rencontrePremiereConversation, $scope.datas.quizDefinition.schema.rencontrePremiereConversation);
+    $scope.datas.rencontreMoment =  $scope.displayOptionsLabel($scope.datas.rencontreMoment, $scope.datas.quizDefinition.fields.rencontreMoment);
+    $scope.datas.rencontrePremiereConversation =  $scope.displayOptionsLabel($scope.datas.rencontrePremiereConversation, $scope.datas.quizDefinition.fields.rencontrePremiereConversation);
 
   }]);
