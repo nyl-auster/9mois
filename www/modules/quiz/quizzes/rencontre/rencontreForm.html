@@ -50,8 +50,8 @@
                   ng-click="saveQuizDatas(datas)"
                   ng-model="datas.rencontreMoment.selected[option.value]"
             > {{ option.label }}</ion-checkbox>
-    <label>Autre</label>
-    <input ng-model="datas.rencontreMoment.other" ng-blur="saveQuizDatas(datas)" type="text">
+    <label>Autre</label><br/>
+    <input ng-model="datas.rencontreMoment.other" ng-blur="saveQuizDatas(datas)" type="text" pu-elastic-input-minwidth="100%">
 
     {{::quizDefinition.fields.rencontrePremiereConversation.prefix}}
 
@@ -61,7 +61,7 @@
                   ng-model="datas.rencontrePremiereConversation.selected[option.value]"
             > {{ option.label }}</ion-checkbox>
     <label>Autre</label>
-    <input ng-model="datas.rencontrePremiereConversation.other" ng-blur="saveQuizDatas(datas)" type="text">
+    <input ng-model="datas.rencontrePremiereConversation.other" ng-blur="saveQuizDatas(datas)" type="text" pu-elastic-input-minwidth="100%">
 
 
 </div>
