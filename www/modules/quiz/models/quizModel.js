@@ -10,9 +10,9 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel
     getAll: function() {
       var datas = jsonStoreFactory.read(jsonStoreKey);
       angular.forEach(datas, function(value, key) {
-        // on ajoute une clef speciale "_definition", qui contient
+        // on ajoute une clef speciale "quizDefinition", qui contient
         // les metadonnées du quizzk !
-        datas[key]['_definition'] = quizDefinitionModel.get(key);
+        datas[key]['quizDefinition'] = quizDefinitionModel.get(key);
       });
       return datas;
     },
@@ -35,7 +35,7 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel
     },
 
     // return true if quizDatas are empty
-    // (all variables considered as empty string, except "_definition" special key
+    // (all variables considered as empty string, except "quizDefinition" special key
     isFilled: function(quizDatas) {
       angular.forEach(quizDatas, function(value, key) {
         console.log(value);
