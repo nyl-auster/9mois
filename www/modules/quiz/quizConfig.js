@@ -1,16 +1,17 @@
-
+/**
+ * Méthode de configuration du module quiz.
+ * Les états de routes UI sont notamment définis ici
+ */
 angular.module('app.quiz')
 
-  // create our states; this is some kind of advanced router for our app.
-  // states machines allow ionic module to build automatically a "back" button
-  // and are far more flexible than native ng-route from Angular js.
-  // @see ui-router module : https://github.com/angular-ui/ui-router
   .config([
     '$stateProvider', '$urlRouterProvider', 'config', '$translateProvider',
     function($stateProvider, $urlRouterProvider,  config, $translateProvider) {
 
+      // création des "states" pour les quiz
       $stateProvider
 
+        // afficher la liste des quiz d'un theme particulier
         .state('app.main.quiz', {
           url: '/app/main/quiz/:themeId',
           views: {
@@ -20,6 +21,7 @@ angular.module('app.quiz')
           }
         })
 
+        // afficher le formulaire du quiz demandé
         .state('app.main.quizDetail', {
           url: '/app/main/quiz/:quizId',
           views: {
@@ -29,6 +31,7 @@ angular.module('app.quiz')
           }
         })
 
+        // liste des réponses aux questions
         .state('app.main.journal', {
           url: '/app/main/journal',
           cache: false,

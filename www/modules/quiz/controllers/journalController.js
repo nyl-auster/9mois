@@ -7,7 +7,7 @@
  */
 angular.module('app.quiz').controller('journalController', ['$stateParams', '$scope', 'quizModel', '$filter', function($stateParams, $scope, quizModel, $filter) {
 
-  // get all quiz
+  // trouver tous nos quizz
   $scope.allDatas = quizModel.getAllFilled();
 
   /**

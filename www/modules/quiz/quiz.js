@@ -1,5 +1,5 @@
 /**
- * Quiz
+ * Déclaration du module Quiz
  */
 angular.module('app.quiz', [
   'app.base',

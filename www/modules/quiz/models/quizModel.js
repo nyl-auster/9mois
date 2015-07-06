@@ -1,5 +1,7 @@
 /**
- * Agnostic persistence model for quiz.
+ * Modele de persistence agnostique pour les quiz.
+ * Pour l'heure, sauvegarde les données du quiz via
+ * notre service jsonStoreFactory
  */
 angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel', 'jsonStoreFactory', function($filter, quizDefinitionModel, jsonStoreFactory) {
 
@@ -11,7 +13,7 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel
       var datas = jsonStoreFactory.read(jsonStoreKey);
       angular.forEach(datas, function(value, key) {
         // on ajoute une clef speciale "quizDefinition", qui contient
-        // les metadonnées du quizzk !
+        // les metadonnées du quizz !
         datas[key]['quizDefinition'] = quizDefinitionModel.get(key);
       });
       return datas;
