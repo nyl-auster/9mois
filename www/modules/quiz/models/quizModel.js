@@ -3,7 +3,7 @@
  * Pour l'heure, sauvegarde les données du quiz via
  * notre service jsonStoreFactory
  */
-angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel', 'jsonStoreFactory', function($filter, quizDefinitionModel, jsonStoreFactory) {
+ angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel', 'jsonStoreFactory', function($filter, quizDefinitionModel, jsonStoreFactory) {
 
   var jsonStoreKey = 'quizzes';
 
@@ -38,12 +38,12 @@ angular.module('app.quiz').factory('quizModel', ['$filter', 'quizDefinitionModel
 
     // return true if quizDatas are empty
     // (all variables considered as empty string, except "quizDefinition" special key
-    isFilled: function(quizDatas) {
-      angular.forEach(quizDatas, function(value, key) {
-        console.log(value);
-      });
+      isFilled: function(quizDatas) {
+        angular.forEach(quizDatas, function(value, key) {
+          console.log(value);
+        });
+      }
+
     }
 
-  }
-
-}]);
+  }]);
