@@ -1,5 +1,8 @@
 /**
  * Controller for quizForm.html template.
+ *
+ * This a generic controller that will display the right
+ * form corresponding to the quiz Id
  */
 angular.module('app.quiz').controller('quizFormController', ['$stateParams', '$scope', 'quizDefinitionModel', 'quizModel', function($stateParams, $scope, quizDefinitionModel, quizModel) {
 
