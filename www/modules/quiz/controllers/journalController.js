@@ -1,19 +1,20 @@
 /**
  * Journal Controller
  *
- * Display all quizz filled by user.
- * @see app.main.journal state
+ * La liste des quiz remplis par l'utilisateur, pour le tab "journal"
+ *
+ * @see app.main.journal state in quizConfig.js
  */
 angular.module('app.quiz').controller('journalController', ['$stateParams', '$scope', 'quizModel', '$filter', function($stateParams, $scope, quizModel, $filter) {
 
   // get all quiz
-  var allDatas = quizModel.getAllFilled();
-  $scope.allDatas = allDatas;
-
+  $scope.allDatas = quizModel.getAllFilled();
 
   /**
-   * For choices : display label instead of stored values (e.g :
-   * "Après midi" instead of "apres_midi" )
+   * Pour les éléments de types checbox / select list :
+   * Afficher un label visible en fonction de l'identifiant du choix enregistré
+   * Par exemple, pour "apres_midi", afficher "Après midi".
+   *
    * @param optionsDatas
    * @param optionsMetadatas
    * @returns {string}

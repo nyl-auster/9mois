@@ -1,16 +1,16 @@
 /**
- * Agnostic persistence model for quiz Definition.
+ * Définition des quizz : quizDefinitionModel sert à stocker
+ * les méta-données permettant de construire à la fois le formulaire
+ * d'un quizz et son affichage.
  *
  * Contient les metadefinitions des quizz : id, templates et controlleurs à utiliser, etc...
  */
-angular.module('app.quiz')
-
-  .factory('quizDefinitionModel', ['$filter', 'languageService', function($filter, languageService) {
+angular.module('app.quiz').factory('quizDefinitionModel', ['$filter', 'languageService', function($filter, languageService) {
 
   var quizzes = [
     {
       // machine name / id of this quiz
-      // CHANGE ID ONLY IF YOU KNOW WHAT YOU ARE DOING
+      // CHANGE ID O  NLY IF YOU KNOW WHAT YOU ARE DOING
       id: 'rencontre',
 
       // only for language :
@@ -78,13 +78,6 @@ angular.module('app.quiz')
 
     getAll: function() {
       return quizzes;
-    },
-
-    getOptionLabel: function(id, variableName, value) {
-      var quizzDefinition = this.get(id);
-      var options = quizzDefinition.datas[variableName].options;
-      var result = $filter('filter')(options, {value: value});
-      return result[0].text;
     },
 
     get: function(id) {
