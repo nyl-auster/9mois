@@ -34,16 +34,18 @@ angular.module('app.quiz').factory('quizDefinitionModel', ['$filter', 'languageS
           prefix: "Ton papa s'apelle"
         },
         pereAge: {
-          prefix: "et il a"
+          prefix: "et il a",
+          suffix: "ans."
         },
         merePrenom: {
           prefix: "Ta maman s'appelle"
         },
         mereAge: {
-          prefix: "Et elle a"
+          prefix: "Et elle a",
+          suffix: "ans."
         },
         rencontreMoment: {
-          prefix: "Nous nous sommes rencontrés",
+          prefix: "Cétait",
           options: [
             { label: "le matin", value: "matin", selected: false},
             { label: "l'après midi", value: 'apres_midi', selected :false },
@@ -61,6 +63,9 @@ angular.module('app.quiz').factory('quizDefinitionModel', ['$filter', 'languageS
             { label: "innocent", value: "innocent" },
             { label: "pour le travail", value: "pour_le_travail" }
           ]
+        },
+        rencontreLieu: {
+          prefix: "Nous nous sommes rencontrés"
         }
       }
     },

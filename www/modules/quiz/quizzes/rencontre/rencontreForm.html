@@ -1,6 +1,6 @@
 <div ng-controller="rencontreFormController">
 
-    {{quizDefinition.schema.perePrenom.prefix}}
+    {{::quizDefinition.schema.perePrenom.prefix}}
 
     <input
             class="quiz-input"
@@ -10,7 +10,7 @@
             type="text"
             ng-model="datas.perePrenom" >
 
-    {{quizDefinition.schema.pereAge.prefix}}
+    {{::quizDefinition.schema.pereAge.prefix}}
 
     <input class="quiz-input"
            ng-blur="saveQuizDatas(datas)"
@@ -19,7 +19,7 @@
            type="text"
            ng-model="datas.pereAge"> ans.
 
-    {{quizDefinition.schema.merePrenom.prefix}}
+    {{::quizDefinition.schema.merePrenom.prefix}}
 
     <input  class="quiz-input"
             pu-elastic-input
@@ -28,7 +28,7 @@
             type="text"
             ng-model="datas.merePrenom">
 
-    {{quizDefinition.schema.mereAge.prefix}}
+    {{::quizDefinition.schema.mereAge.prefix}}
 
     <input
             class="quiz-input"
@@ -38,13 +38,13 @@
             type="text"
             ng-model="datas.mereAge"> ans.
 
-    Nous nous sommes rencontrés :  (ville, lieu et date de la rencontre).
+    {{::quizDefinition.schema.rencontreLieu.prefix}}
 
-    <textarea class="quiz" ng-blur="saveQuizDatas(datas)" auto-grow ng-model="datas.rencontreDescription"></textarea>
+    <textarea class="quiz" ng-blur="saveQuizDatas(datas)" auto-grow ng-model="datas.rencontreLieu"></textarea>
 
     <br />
 
-    C'était :
+    {{::quizDefinition.schema.rencontreMoment.prefix}}
     <ion-checkbox ng-repeat="option in quizDefinition.schema.rencontreMoment.options"
                   ng-checked="datas.rencontreMoment.selected[option.value]"
                   ng-click="saveQuizDatas(datas)"
@@ -53,7 +53,8 @@
     <label>Autre</label>
     <input ng-model="datas.rencontreMoment.other" ng-blur="saveQuizDatas(datas)" type="text">
 
-    La première fois que nous nous sommes parlé c'était
+    {{::quizDefinition.schema.rencontrePremiereConversation.prefix}}
+
     <ion-checkbox ng-repeat="option in quizDefinition.schema.rencontrePremiereConversation.options"
                   ng-checked="datas.rencontrePremiereConversation.selected[option.value]"
                   ng-click="saveQuizDatas(datas)"

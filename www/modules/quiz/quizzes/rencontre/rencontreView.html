@@ -1,11 +1,24 @@
 <div ng-controller="rencontreViewController">
 
-Ton papa s'appelle {{::datas.perePrenom}} et il a {{::datas.pereAge}} ans.
-Ta maman s'appelle {{::datas.merePrenom}} et elle a {{::datas.mereAge}} ans.
+    {{::datas.quizDefinition.schema.perePrenom.prefix}}
+    {{::datas.perePrenom}}
 
-Nous nous sommes rencontrés :  {{::datas.rencontreDescription}}
+    {{::datas.quizDefinition.schema.pereAge.prefix}}
+    {{::datas.pereAge}}
+    {{::datas.quizDefinition.schema.pereAge.suffix}}
 
-C'était {{::datas.rencontreMoment }}
+    {{::datas.quizDefinition.schema.merePrenom.prefix}}
+    {{::datas.merePrenom}}
+
+    {{::datas.quizDefinition.schema.mereAge.prefix}}
+    {{::datas.mereAge}}
+    {{::datas.quizDefinition.schema.mereAge.suffix}}
+
+    {{::datas.quizDefinition.schema.rencontreLieu.prefix}}
+    {{::datas.rencontreLieu}}
+
+    {{::datas.quizDefinition.schema.rencontreMoment.prefix}}
+    {{::datas.rencontreMoment}}
 
 </div>
 

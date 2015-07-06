@@ -15,7 +15,6 @@ angular.module('app.quiz').controller('quizFormController', ['$stateParams', '$s
   // get datas stored about this quizz
   $scope.datas = quizModel.get(quizId);
 
-
   // Save quiz datas to persistent storage.
   $scope.saveQuizDatas = function(quizDatas) {
     quizModel.save(quizId, quizDatas);
